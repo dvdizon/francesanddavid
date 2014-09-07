@@ -105,18 +105,27 @@ SPLASH MAGIC thanks to purecss.io examples
 CONTENT STYLES
  */
 
-.content-wrapper {
+.content {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
     top: 87%;
     min-height: 12%;
     z-index: 2;
     background: white;
-    padding: 2em;
 }
 
-h2 {
+.content h2 {
 	font-weight: normal;
 	font-family: "omnes-pro", sans-serif;
 	color: #1f8dd6;
+	padding-left: 20px;
+}
+
+.filler {
+	height: 50px;
+	background-color: #E5E5E5;
+}
+
+.content p {
+	padding-left: 20px;
 }
