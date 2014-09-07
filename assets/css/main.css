@@ -17,7 +17,7 @@ header nav {
 }
 
 /*
-TITLE SYLES
+TITLE/LOGO SYLES
  */
 
 #page-title {
@@ -32,7 +32,7 @@ TITLE SYLES
 }
 
 #page-title a i {
-	padding-right: 5px;
+	padding-right: 10px;
 }
 
 #page-title a:hover {
