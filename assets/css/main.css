@@ -116,6 +116,7 @@ CONTENT STYLES
 }
 
 h2 {
+	font-weight: normal;
 	font-family: "omnes-pro", sans-serif;
 	color: #1f8dd6;
 }
