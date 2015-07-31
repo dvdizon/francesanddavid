@@ -54,9 +54,8 @@ deploy:
           scp -r -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no assets views index.js package.json root@francesanddavid.com:/var/local/www
     - script:
         name: npm install
-        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no francesanddavid.com "npm install pm2 -g && pm2 update && cd /var/local/www/ && npm install --production"
+        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no francesanddavid.com "cd /var/local/www/ && npm install --production"
     - script:
         name: start application
         code: |
-          ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no francesanddavid.com "cd /var/local/www/ && pm2 stop index"
-          ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no francesanddavid.com "cd /var/local/www/ && pm2 start index.js
+          ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no francesanddavid.com "pm2 restart index"
