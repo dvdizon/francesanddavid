@@ -1,0 +1,16 @@
+{
+  "name": "francesanddavid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Dizon",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.4.0",
+    "handlebars": "^3.0.3",
+    "hapi": "^8.8.1"
+  }
+}

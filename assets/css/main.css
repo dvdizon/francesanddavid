@@ -112,6 +112,7 @@ CONTENT STYLES
     min-height: 12%;
     z-index: 2;
     background: white;
+	width: 100%;
 }
 
 .content h2 {
@@ -128,4 +129,35 @@ CONTENT STYLES
 
 .content p {
 	padding-left: 20px;
+}
+
+/* Text and photo styles */
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.portrait-small {
+	width: 150px;
+	margin: 10px;
+}
+
+/* Flickr Photos styles*/
+#flickr-set {
+	background-color: #0F0F0F;
+}
+
+#flickr-set ul {
+	list-style: none;
+}
+
+#flickr-set ul li {
+	display: inline;
+}
+
+#flickr-set .flickr-container .item {
+	margin-bottom: 10px;
 }
