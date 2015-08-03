@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests yet\" && exit 0"
+    "test": "echo \"No tests yet\" && exit 0",
+    "start": "node index.js",
+    "local": "node index.js localhost 8000"
   },
   "author": "David Dizon",
   "license": "MIT",

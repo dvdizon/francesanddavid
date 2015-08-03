@@ -1,10 +1,22 @@
 var Hapi = require('hapi'),
-    async = require('async');
+    async = require('async'),
+    hostname = 'francesanddavid.com',
+    port = 80;
+
+
+console.dir(process.argv);
+if (process.argv[2] === 'localhost') {
+    hostname = 'localhost';
+}
+
+if (process.argv[3] === '8000') {
+    port = 8000;
+}
 
 var server = new Hapi.Server();
 server.connection({
-    host: 'francesanddavid.com',
-    port: 80
+    host: hostname,
+    port: port
 });
 
 server.route({
