@@ -64,7 +64,7 @@ SPLASH MAGIC thanks to purecss.io examples
  */
 .splash-container {
     background: url("../images/engagement.jpg") no-repeat right top fixed;
-    background-size: cover;
+    background-size: 100% auto;
     z-index: 1;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
