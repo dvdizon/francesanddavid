@@ -60,7 +60,7 @@ header nav#navigation .nav-item a {
 }
 
 /*
-SPLASH MAGIC thanks to purecss.io examples
+SPLASH MAGIC thanks to purecss.io examples, did not fix mobile
  */
 .splash-container {
     background: url("../images/engagement.jpg") no-repeat right top fixed;
