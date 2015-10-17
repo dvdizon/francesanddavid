@@ -10,11 +10,17 @@ $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhot
     });
     $("#flickr-set").append(list);
 
-    var $container = $('.flickr-container');
-    $container.imagesLoaded( function() {
-        $container.masonry({
-            itemSelector: '.item',
-            gutter: 10
-        });
+    var $grid = $('.flickr-container').isotope({
+      // main isotope options
+      itemSelector: '.item',
+      // set layoutMode
+      layoutMode: 'fitRows',
+      isInitLayout: false,
+      masonry: {
+          gutter: 10
+      }
+    });
+    $grid.imagesLoaded().progress( function() {
+        $grid.isotope('layout');
     });
 });
