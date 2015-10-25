@@ -1,9 +1,15 @@
+@import url("title-logo.css");
+@import url("nav.css");
+@import url("content.css");
+@import url("photos.css");
 /*
 GENERAL LAYOUT STYLES
  */
 body {
     padding: 0px;
     margin: 0px;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Sura', serif;
 }
 
 header {
@@ -17,155 +23,26 @@ header nav {
 }
 
 /*
-TITLE/LOGO SYLES
- */
-
-#page-title {
-    display: inline-block;
-    margin: 0px 20px;
-}
-
-#page-title a {
-    display: inline-block;
-    padding: 0px;
-    color: #555;
-}
-
-#page-title a i {
-    padding-right: 10px;
-}
-
-#page-title a:hover {
-    color: gray;
-}
-
-/*
-NAVIGATION STYLES
- */
-
-header nav#navigation ul {
-    float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-header nav#navigation.pure-menu.pure-menu-open {
-    background-color: #E3E8EC;
-}
-
-header nav#navigation .nav-item a {
-    color: #333;
-    text-transform: uppercase;
-    border-radius: 4px;
-}
-
-/*
-SPLASH MAGIC thanks to purecss.io examples
- */
-.splash-container {
-    background: url("../images/engagement.jpg") no-repeat right top fixed;
-    background-size: 100% auto;
-    z-index: 1;
-    overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
-    width: 100%;
-    height: 90%;
-    top: 0;
-    left: 0;
-    position: fixed !important;
-}
+  Top Page Splash
+*/
 
 .splash {
-    /* absolute center .splash within .splash-container */
-    width: 80%;
-    height: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin-left: 2%;
-    margin-top: 150px;
-    min-width: 680px
+    max-height: 800px;
+    overflow: hidden;
 }
-
-.splash-container .splash-text {
-    font-family: sans-serif;
-    display: block;
-    color: #F5F5F5;
-}
-
-/*TODO: make responsive*/
-.splash-text {
-    font-size: 60px;
-    opacity: 0.8;
-}
-
-/*
-CONTENT STYLES
- */
-
-.content {
-    /* These styles are required for the "scroll-over" effect */
-    position: absolute;
-    top: 87%;
-    min-height: 12%;
-    z-index: 2;
-    background: white;
+.splash-container img {
     width: 100%;
 }
 
-.content h2 {
-    font-weight: normal;
-    font-family: "omnes-pro", sans-serif;
-    color: #1f8dd6;
-    padding-left: 20px;
+.splash-container .splash-text-container {
+    position: absolute;
+    top: 10%;
+    margin-left: 2%;
 }
-
-.filler {
-    height: 50px;
-    background-color: #E5E5E5;
-}
-
-.content p {
-    padding-left: 20px;
-}
-
-/* Text and photo styles */
-.float-left {
+.splash-container .splash-text {
+    display: block;
+    color: #FFF;
     float: left;
-}
-
-.float-right {
-    float: right;
-}
-
-.portrait-small {
-    width: 150px;
-    margin: 10px;
-}
-
-/* Flickr Photos styles*/
-#flickr-set {
-    background-color: #0F0F0F;
-}
-
-#flickr-set ul {
-    list-style: none;
-}
-
-#flickr-set ul li {
-    display: inline;
-}
-
-#flickr-set .flickr-container .item {
-    margin-bottom: 10px;
-    margin-right: 10px;
-}
-
-/* Media screen madness */
-@media screen and (max-width: 900px) {
-    .splash-container {
-        background: url("../images/engagement.jpg") no-repeat -1230px -300px fixed;
-    }
+    clear: both;
+    font-size: 270%;
 }

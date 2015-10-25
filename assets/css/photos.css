@@ -1,0 +1,17 @@
+/* Flickr Photos styles*/
+#flickr-set {
+    background-color: #0F0F0F;
+}
+
+#flickr-set ul {
+    list-style: none;
+}
+
+#flickr-set ul li {
+    display: inline;
+}
+
+#flickr-set .flickr-container .item {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}

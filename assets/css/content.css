@@ -1,0 +1,40 @@
+/*
+CONTENT STYLES
+ */
+
+.content {
+    /* These styles are required for the "scroll-over" effect */
+    min-height: 12%;
+    z-index: 2;
+    background: white;
+    width: 100%;
+}
+
+.content h2 {
+    font-weight: normal;
+    color: #1f8dd6;
+    padding-left: 20px;
+}
+
+.filler {
+    height: 50px;
+    background-color: #E5E5E5;
+}
+
+.content p {
+    padding-left: 20px;
+}
+
+/* Text and photo styles */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.portrait-small {
+    width: 150px;
+    margin: 10px;
+}
