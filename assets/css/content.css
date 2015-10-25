@@ -8,6 +8,9 @@ CONTENT STYLES
     z-index: 2;
     background: white;
     width: 100%;
+    text-align: center;
+    /* Background pattern from subtlepatterns.com */
+    background: url("/assets/images/seamless_paper_texture.png") repeat;
 }
 
 .content h1 {
@@ -21,7 +24,36 @@ CONTENT STYLES
 
 .filler {
     height: 50px;
-    background-color: #E5E5E5;
+    background-color: #FFFFFF;
+    opacity: 0.7;
+}
+
+.wedding-details h1 {
+    margin-bottom: 0px;
+}
+
+.wedding-details .big-details-container {
+    background-color: #FFFFFF;
+    display: inline-block;
+    padding: 30px;
+    margin: 10px 0px 20px 0px;
+    border: 2px dashed #D4D4D4;
+    border-radius: 4px;
+}
+
+
+.wedding-details .big-details {
+    font-size: 250%;
+    font-family: 'Great Vibes', cursive;
+    display: block;
+    color: #C51919;
+}
+
+.wedding-details .big-details.date {
+    font-size: 390%;
+}
+.wedding-details .big-details.location {
+    font-size: 300%;
 }
 
 /* Text and photo styles */

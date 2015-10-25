@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Sura);
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
 @import url("title-logo.css");
 @import url("nav.css");
 @import url("content.css");
@@ -29,6 +31,7 @@ header nav {
 .splash {
     max-height: 800px;
     overflow: hidden;
+    margin-bottom: -7px;
 }
 .splash-container img {
     width: 100%;
