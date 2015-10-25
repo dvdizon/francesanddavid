@@ -10,19 +10,18 @@ CONTENT STYLES
     width: 100%;
 }
 
-.content h2 {
-    font-weight: normal;
-    color: #1f8dd6;
+.content h1 {
+    color: #C51919;
+}
+
+.content-container {
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 .filler {
     height: 50px;
     background-color: #E5E5E5;
-}
-
-.content p {
-    padding-left: 20px;
 }
 
 /* Text and photo styles */
