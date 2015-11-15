@@ -22,6 +22,12 @@ CONTENT STYLES
     padding-right: 20px;
 }
 
+.content-container p {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .filler {
     height: 50px;
     background-color: #FFFFFF;
@@ -41,7 +47,6 @@ CONTENT STYLES
     border-radius: 4px;
 }
 
-
 .wedding-details .big-details {
     font-size: 250%;
     font-family: 'Great Vibes', cursive;
@@ -54,6 +59,11 @@ CONTENT STYLES
 }
 .wedding-details .big-details.location {
     font-size: 300%;
+}
+
+.image-thumb {
+    width: 300px;
+    height: 200px;
 }
 
 /* Text and photo styles */
