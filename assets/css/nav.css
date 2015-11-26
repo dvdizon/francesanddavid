@@ -30,7 +30,7 @@ NAVIGATION STYLES
 }
 
 .custom-wrapper.open {
-    height: 14em;
+    height: 19em;
 }
 
 .custom-menu-3 {
@@ -91,6 +91,10 @@ NAVIGATION STYLES
 
     .custom-toggle {
         display: block;
+    }
+
+    .pure-menu-item a.pure-menu-link {
+        font-size: 1.5em;
     }
 
 }
