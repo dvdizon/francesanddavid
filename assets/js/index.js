@@ -54,10 +54,10 @@ $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhot
       // main isotope options
       itemSelector: '.item',
       // set layoutMode
-      layoutMode: 'fitRows',
+      layoutMode: 'masonry',
       isInitLayout: false,
       masonry: {
-          gutter: 10
+          gutter: 5
       }
     });
     $grid.imagesLoaded().progress( function() {
