@@ -8,7 +8,9 @@ Using:
 - [hapi.js](http://hapijs.com/)
 - [jquery](https://jquery.com/)
 - [masonry](http://masonry.desandro.com/) + [imagesloaded](http://imagesloaded.desandro.com/)
+- [isotope](http://isotope.metafizzy.co/)
 - [wercker](http://wercker.com)
+- [imagelightbox](http://osvaldas.info/image-lightbox-responsive-touch-friendly)
 - [digital ocean](https://digitalocean.com/) (for hosting)
 - [node/pm2](https://github.com/Unitech/pm2) (for running server in the background)
 

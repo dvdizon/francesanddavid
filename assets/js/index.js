@@ -43,9 +43,12 @@ $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhot
     $.each(data.photoset.photo, function (i, item) {
         //build the url of the photo in order to link to it
         var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-        var photo = $("<img/>").attr("src", photoURL)
-        .attr("class", "item flickr-photo");
-        var li = $("<li/>").append(photo);
+        var bigPhotoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg';
+        var photo = $('<img/>').attr('src', photoURL)
+        .attr('class', 'item flickr-photo');
+        var a = $('<a href="' + bigPhotoURL + '" class="imagelightbox"/>');
+        var li = $('<li/>').append(a);
+        a.append(photo);
         $(list).append(li);
     });
     $("#flickr-set").append(list);
@@ -62,5 +65,32 @@ $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhot
     });
     $grid.imagesLoaded().progress( function() {
         $grid.isotope('layout');
+    });
+
+    var activityIndicatorOn = function() {
+            $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
+        },
+        activityIndicatorOff = function() {
+            $( '#imagelightbox-loading' ).remove();
+        },
+        overlayOn = function() {
+            $( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' );
+        },
+        overlayOff = function() {
+            $( '#imagelightbox-overlay' ).remove();
+        },
+        closeButtonOn = function( instance ) {
+        $( '<button type="button" id="imagelightbox-close" title="Close"></button>' ).appendTo( 'body' ).on( 'click touchend', function(){ $( this ).remove(); instance.quitImageLightbox(); return false; });
+        },
+        closeButtonOff = function() {
+            $( '#imagelightbox-close' ).remove();
+        };
+
+    var instanceC = $('a.imagelightbox').imageLightbox({
+        quitOnDocClick:    false,
+        onStart:            function() { overlayOn(); closeButtonOn( instanceC ); },
+        onEnd:              function() { overlayOff(); closeButtonOff(); activityIndicatorOff(); },
+        onLoadStart:        function() { activityIndicatorOn(); },
+        onLoadEnd:          function() { activityIndicatorOff(); }
     });
 });
