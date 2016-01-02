@@ -73,6 +73,11 @@ div.content div.content-container.photos {
     font-size: 300%;
 }
 
+span.registries {
+    display: inline-block;
+    padding-right: 10px;
+}
+
 .image-thumb {
     width: 300px;
     height: 200px;

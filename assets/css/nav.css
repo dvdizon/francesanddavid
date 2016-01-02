@@ -29,9 +29,9 @@ NAVIGATION STYLES
     opacity: 0.85;
 }
 
-/*MODIFY: When adding a new menu button*/
+/*MODIFY: When adding a new menu button 3em per item*/
 .custom-wrapper.open {
-    height: 23em;
+    height: 26em;
 }
 
 .custom-menu-3 {
