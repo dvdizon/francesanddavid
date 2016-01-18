@@ -96,3 +96,36 @@ span.registries {
     width: 150px;
     margin: 10px;
 }
+
+/* Maps */
+
+#wedding-map {
+    height: 420px;
+}
+
+#map-container {
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+#mapcontent {
+    width: 350px;
+    height: 70px;
+}
+#mapcontent h1 {
+    font-size: 15px;
+    margin: 0;
+}
+#mapcontent .address {
+    font-style: italic;
+}
+#mapcontent .phone {
+    font-style: italic;
+}
+#mapcontent img {
+    float: left;
+    padding-right: 5px;
+}
+#mapcontent .content {
+    float: left;
+}
