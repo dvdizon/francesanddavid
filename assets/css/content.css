@@ -50,7 +50,15 @@ div.content div.content-container.photos {
     margin-bottom: 0px;
 }
 
-.wedding-details .big-details-container {
+.wedding-details .big-details.date {
+    font-size: 390%;
+}
+.wedding-details .big-details.location {
+    font-size: 300%;
+}
+
+.wedding-details .big-details-container,
+.ceremony-details .big-details-container {
     background-color: #FFFFFF;
     display: inline-block;
     padding: 30px;
@@ -59,18 +67,39 @@ div.content div.content-container.photos {
     border-radius: 4px;
 }
 
-.wedding-details .big-details {
+.wedding-details .big-details,
+.ceremony-details .big-details {
     font-size: 250%;
     font-family: 'Great Vibes', cursive;
     display: block;
     color: #C51919;
 }
 
-.wedding-details .big-details.date {
-    font-size: 390%;
+.ceremony-details {
+    text-align: center;
 }
-.wedding-details .big-details.location {
-    font-size: 300%;
+
+.wedding-party-details {
+    text-align: center;
+    width: 270px;
+    margin-bottom: 20px;
+}
+
+.wedding-party-details span {
+    display: block;
+}
+
+.wedding-party-details .label {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: 'Sura', serif;
+}
+
+.wedding-party-details .names,
+.wedding-party-details .pure-g .pure-u-md-1-2 .names{
+    font-style: italic;
+    font-family: 'Sura', serif;
 }
 
 span.registries {
