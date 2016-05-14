@@ -33,6 +33,10 @@ NAVIGATION STYLES
 .custom-wrapper.open {
     height: 26em;
 }
+/*MODIFY: When adding a new menu button 3em per item*/
+.custom-wrapper.program.open {
+    height: 10em;
+}
 
 .custom-menu-3 {
     text-align: right;

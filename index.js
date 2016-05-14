@@ -32,6 +32,20 @@ server.route({
     }
 });
 
+//program route
+server.route({
+    path: "/program",
+    method: "GET",
+    handler: {
+        view: {
+            template: 'program',
+            context: {
+                title: 'Frances and David\'s wedding program'
+            }
+        }
+    }
+});
+
 // Setup views
 server.views({
     engines: {
