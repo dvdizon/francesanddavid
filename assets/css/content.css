@@ -57,8 +57,7 @@ div.content div.content-container.photos {
     font-size: 300%;
 }
 
-.wedding-details .big-details-container,
-.ceremony-details .big-details-container {
+.wedding-details .big-details-container {
     background-color: #FFFFFF;
     display: inline-block;
     padding: 30px;
@@ -67,29 +66,34 @@ div.content div.content-container.photos {
     border-radius: 4px;
 }
 
-.wedding-details .big-details,
-.ceremony-details .big-details {
+.wedding-details .big-details {
     font-size: 250%;
     font-family: 'Great Vibes', cursive;
     display: block;
     color: #C51919;
 }
 
+.wedding-party-details,
 .ceremony-details {
     text-align: center;
-}
-
-.wedding-party-details {
-    text-align: center;
-    width: 270px;
+    width: 280px;
     margin-bottom: 20px;
+    background: #FFFFFF;
+    padding: 20px;
 }
 
-.wedding-party-details span {
+.ceremony-title h1,
+.wedding-party-title h1 {
+    text-align: center;
+}
+
+.wedding-party-details span,
+.ceremony-details span {
     display: block;
 }
 
-.wedding-party-details .label {
+.wedding-party-details .label,
+.ceremony-details .label {
     text-transform: uppercase;
     font-weight: bold;
     margin-top: 10px;
@@ -97,7 +101,7 @@ div.content div.content-container.photos {
 }
 
 .wedding-party-details .names,
-.wedding-party-details .pure-g .pure-u-md-1-2 .names{
+.ceremony-details .names {
     font-style: italic;
     font-family: 'Sura', serif;
 }
