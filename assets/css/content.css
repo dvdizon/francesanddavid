@@ -76,7 +76,7 @@ div.content div.content-container.photos {
 .wedding-party-details,
 .ceremony-details {
     text-align: center;
-    width: 85%;
+    width: 460px;
     margin-bottom: 20px;
     background: #FFFFFF;
     padding: 20px;
@@ -93,7 +93,7 @@ div.content div.content-container.photos {
 }
 
 .ceremony-details .label {
-    font-size: 350%;
+    font-size: 360%;
     font-family: 'Great Vibes', cursive;
     border-top: 1px solid #ECECEC;
     margin-top: 15px;
@@ -101,7 +101,7 @@ div.content div.content-container.photos {
 }
 
 .ceremony-details .names {
-    font-size: 110%;
+    font-size: 150%;
 }
 
 .wedding-party-details .label {
@@ -111,13 +111,13 @@ div.content div.content-container.photos {
     border-top: 1px solid #ECECEC;
     margin-top: 15px;
     padding-top: 5px;
-    font-size: 140%;
+    font-size: 180%;
 }
 
 .wedding-party-details .names {
     font-style: italic;
     font-family: 'Sura', serif;
-    font-size: 110%;
+    font-size: 150%;
 }
 
 span.registries {
