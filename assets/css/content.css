@@ -76,8 +76,8 @@ div.content div.content-container.photos {
 .wedding-party-details,
 .ceremony-details {
     text-align: center;
-    width: 460px;
-    margin-bottom: 20px;
+    width: auto;
+    margin: 0 0 20px 0;
     background: #FFFFFF;
     padding: 20px;
 }
@@ -124,9 +124,13 @@ div.content div.content-container.photos {
     font-size: 150%;
 }
 
-.no-photos img {
+.no-photos-context img {
     display: block;
     margin: auto;
+}
+
+.do-not-take-photos {
+    font-weight: bold;
 }
 
 span.registries {
