@@ -82,6 +82,11 @@ div.content div.content-container.photos {
     padding: 20px;
 }
 
+.ceremony-title,
+.wedding-party-title {
+    width: auto;
+}
+
 .ceremony-title h1,
 .wedding-party-title h1 {
     text-align: center;
