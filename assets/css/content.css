@@ -120,6 +120,10 @@ div.content div.content-container.photos {
     font-size: 150%;
 }
 
+.no-photos {
+    text-align: center;
+}
+
 span.registries {
     display: inline-block;
     padding-right: 10px;

@@ -4,6 +4,7 @@
 @import url("nav.css");
 @import url("content.css");
 @import url("photos.css");
+@import url("modal.css");
 /*
 GENERAL LAYOUT STYLES
  */
@@ -48,4 +49,14 @@ header nav {
     float: left;
     clear: both;
     font-size: 270%;
+}
+
+
+/*
+  Button style
+*/
+
+.button-primary {
+    background-color: #C51919;
+    color: #FFFFFF;
 }
