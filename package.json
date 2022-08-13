@@ -1,6 +1,6 @@
 {
   "name": "francesanddavid",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,9 @@
   "author": "David Dizon",
   "license": "MIT",
   "dependencies": {
-    "async": "^1.4.0",
-    "handlebars": "^3.0.3",
-    "hapi": "^8.8.1"
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/inert": "^7.0.0",
+    "@hapi/vision": "^7.0.0",
+    "hbs": "^4.2.0"
   }
 }
