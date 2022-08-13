@@ -1,70 +1,73 @@
-var Hapi = require('hapi'),
-    async = require('async'),
-    hostname = 'francesanddavid.com',
-    port = 80;
+'use strict'
 
+const hostname = 'francesanddavid.com';
+const port = 80;
+const Hapi = require('@hapi/hapi');
+const hbs = require('hbs');
 
-console.dir(process.argv);
-if (process.argv[2] === 'localhost') {
-    hostname = 'localhost';
-}
+const init = async () => {
+    const server = Hapi.server({
+        port: port,
+        host: hostname
+    });
 
-if (process.argv[3] === '8000') {
-    port = 8000;
-}
+    await server.register(require('@hapi/inert'));
+    await server.register(require('@hapi/vision'));
 
-var server = new Hapi.Server();
-server.connection({
-    host: hostname,
-    port: port
-});
+    server.views({
+        engines: {
+            html: hbs
+        },
+        relativeTo: __dirname,
+        path: 'views'
+    });
 
-server.route({
-    path: "/",
-    method: "GET",
-    handler: {
-        view: {
-            template: 'index',
-            context: {
-                title: 'Frances and David dot com'
+    server.route({
+        path: "/",
+        method: "GET",
+        handler: {
+            view: {
+                template: 'index',
+                context: {
+                    title: 'Frances and David dot com'
+                }
             }
         }
-    }
-});
+    });
 
-//program route
-server.route({
-    path: "/program",
-    method: "GET",
-    handler: {
-        view: {
-            template: 'program',
-            context: {
-                title: 'Frances and David\'s wedding program'
+    //program route
+    server.route({
+        path: "/program",
+        method: "GET",
+        handler: {
+            view: {
+                template: 'program',
+                context: {
+                    title: 'Frances and David\'s wedding program'
+                }
             }
         }
-    }
-});
+    });
 
-// Setup views
-server.views({
-    engines: {
-        html: require('handlebars')
-    },
-    path: './views'
-});
 
-// Setup static files
-server.route({
-    method: 'GET',
-    path: '/assets/{param*}',
-    handler: {
-        directory: {
-            path: 'assets'
+    // Setup static files
+    server.route({
+        method: 'GET',
+        path: '/assets/{param*}',
+        handler: {
+            directory: {
+                path: 'assets'
+            }
         }
-    }
-});
-
-server.start(function() {
+    });
+    await server.start()
     console.log("Hapi server started @", server.info.uri);
+};
+
+
+process.on('unhandledRejection', (err) => {
+        console.log(err);
+        process.exit(1);
 });
+
+init();
