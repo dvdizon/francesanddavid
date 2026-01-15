@@ -50,6 +50,20 @@ const startServer = async ({ host = defaultHost, port = defaultPort } = {}) => {
         }
     });
 
+    // wedding details route
+    server.route({
+        path: "/wedding.html",
+        method: "GET",
+        handler: {
+            view: {
+                template: 'wedding',
+                context: {
+                    title: 'Frances and David\'s wedding details'
+                }
+            }
+        }
+    });
+
 
     // Setup static files
     server.route({

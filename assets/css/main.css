@@ -1,18 +1,42 @@
-@import url(https://fonts.googleapis.com/css?family=Sura);
-@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
-@import url("title-logo.css");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 @import url("nav.css");
 @import url("content.css");
 @import url("photos.css");
 @import url("modal.css");
-/*
-GENERAL LAYOUT STYLES
- */
+
+:root {
+    --ink-900: #10131a;
+    --ink-700: #2f3642;
+    --ink-500: #5f6672;
+    --brand-600: #b2485a;
+    --brand-500: #c66a7c;
+    --brand-200: #f4d7dd;
+    --stone-50: #f8f6f5;
+    --stone-100: #f1eceb;
+    --white: #ffffff;
+    --shadow-soft: 0 25px 60px rgba(16, 19, 26, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Sura', serif;
+    font-family: "Manrope", sans-serif;
+    color: var(--ink-700);
+    background: var(--stone-50);
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 header {
@@ -25,38 +49,115 @@ header nav {
     position: fixed;
 }
 
-/*
-  Top Page Splash
-*/
-
-.splash {
-    max-height: 800px;
-    overflow: hidden;
-    margin-bottom: -7px;
-}
-.splash-container img {
-    width: 100%;
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
 }
 
-.splash-container .splash-text-container {
-    position: absolute;
-    top: 10%;
-    margin-left: 2%;
-}
-.splash-container .splash-text {
-    display: block;
-    color: #FFF;
-    float: left;
-    clear: both;
-    font-size: 270%;
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    color: var(--brand-600);
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
-
-/*
-  Button style
-*/
+.button-primary,
+.button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
 
 .button-primary {
-    background-color: #C51919;
-    color: #FFFFFF;
+    background: var(--brand-600);
+    color: var(--white);
+    box-shadow: 0 15px 30px rgba(178, 72, 90, 0.25);
+}
+
+.button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 40px rgba(178, 72, 90, 0.28);
+}
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--ink-900);
+    border: 1px solid rgba(16, 19, 26, 0.1);
+}
+
+.button-secondary:hover {
+    transform: translateY(-1px);
+    background: var(--white);
+}
+
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.hero.hero-compact {
+    min-height: 70vh;
+}
+
+.hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(16, 19, 26, 0.6), rgba(16, 19, 26, 0.2));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(720px, 90%);
+    padding: 8rem 0 6rem;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    margin: 0 0 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (max-width: 767px) {
+    .hero-content {
+        padding: 7rem 0 5rem;
+    }
 }

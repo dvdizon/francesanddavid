@@ -9,7 +9,15 @@
 
 #flickr-set .flickr-container .item {
     margin-bottom: 5px;
-    width: 180px;
+    width: 220px;
+    border-radius: 16px;
+    box-shadow: 0 12px 20px rgba(16, 19, 26, 0.12);
+    overflow: hidden;
+}
+
+#flickr-set .flickr-container .item img {
+    width: 100%;
+    display: block;
 }
 
 /* source from http://osvaldas.info/image-lightbox-responsive-touch-friendly */

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
-    <meta name=viewport content='width=700'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon"
       type="image/png"
       href="assets/images/heart_2x.png">
     <title>Frances and David - Our Engagement and Wedding Website</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
     <!--[if lte IE 8]>
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+        <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
     <![endif]-->
     <!--[if gt IE 8]><!-->
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+        <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css"/>
 </head>
@@ -22,7 +23,7 @@
             <div class="pure-u-1 pure-u-md-1-6">
                 <div class="pure-menu">
                     <h1 id="page-title">
-                      <a href="#" class="pure-menu-heading custom-brand"><i class="fa fa-heart fa-2"></i>F &amp; D</a>
+                      <a href="#top" class="pure-menu-heading custom-brand"><i class="fa fa-heart fa-2"></i>F &amp; D</a>
                     </h1>
                     <a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
                 </div>
@@ -30,10 +31,9 @@
             <div class="pure-u-1 pure-u-md-5-6">
                 <div class="pure-menu pure-menu-horizontal custom-can-transform">
                     <ul class="pure-menu-list">
-                        <li class="pure-menu-item"><a href="#wedding" class="pure-menu-link">Wedding</a></li>
-                        <li class="pure-menu-item"><a href="#accomodations" class="pure-menu-link">Accomodations</a></li>
-                        <li class="pure-menu-item"><a href="#registry" class="pure-menu-link">Registry</a></li>
-                        <li class="pure-menu-item"><a href="#proposal" class="pure-menu-link">Engagement</a></li>
+                        <li class="pure-menu-item"><a href="/wedding.html" class="pure-menu-link">Wedding Details</a></li>
+                        <li class="pure-menu-item"><a href="#proposal" class="pure-menu-link">Proposal</a></li>
+                        <li class="pure-menu-item"><a href="#highlights" class="pure-menu-link">Highlights</a></li>
                         <li class="pure-menu-item"><a href="#story" class="pure-menu-link">Our Story</a></li>
                         <li class="pure-menu-item"><a href="#photos" class="pure-menu-link">Photos</a></li>
                     </ul>
@@ -41,146 +41,109 @@
             </div>
         </nav>
     </header>
-    <section>
-        <div class="splash-container">
-            <div class="splash">
-                <img src="assets/images/engagement.jpg"/>
-                <div class="splash-text-container">
-                    <span class="splash-text">Frances</span>
-                    <span class="splash-text">&amp;</span>
-                    <span class="splash-text">David</span>
+    <main id="top">
+        <section class="hero">
+            <div class="hero-media">
+                <img src="assets/images/engagement.jpg" alt="Frances and David engagement portrait"/>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="eyebrow">May 21, 2016 • Pleasanton, California</p>
+                <h1>Frances &amp; David</h1>
+                <p class="hero-subtitle">A photo-first story of the proposal, the wedding, and the early days that brought us together.</p>
+                <div class="hero-actions">
+                    <a class="button-primary" href="#proposal">Watch the proposal</a>
+                    <a class="button-secondary" href="/wedding.html">See wedding details</a>
                 </div>
             </div>
-        </div>
-        <div class="content">
-            <a name="wedding"></a>
-            <div class="filler">&nbsp;</div>
-            <div class="content-container">
-                <h1>The Wedding</h1>
-            </div>
-            <div class="content-container wedding-video">
-                <iframe src="https://player.vimeo.com/video/171783323?autoplay=1&title=0&byline=0&portrait=0" width="640" height="273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-            <div class="content-container wedding-details">
-                <div class="big-details-container">
-                  <span class="big-details date">May 21st</span>
-                  <span class="big-details date">2016</span>
-                  <span class="big-details location">at</span>
-                  <span class="big-details location">the Palm Event Center</span>
-                  <span class="big-details location">Pleasanton, California</span>
-                </div>
-            </div>
-            <div class="content-container">
-                <div class="venue-images">
-                  <a href="assets/images/PalmEventCenter1_resized.jpg" class="imagelightbox">
-                      <img class="image-thumb" src="assets/images/PalmEventCenter1_resized.jpg"/>
-                  </a>
-                  <a href="assets/images/PalmEventCenter3_resized.jpg" class="imagelightbox">
-                      <img class="image-thumb" src="assets/images/PalmEventCenter3_resized.jpg"/>
-                  </a>
-                </div>
-                <h1>Where</h1>
-                <div class="pure-g" id="map-container">
-                    <div class="pure-u-1 pure-u-md-1-3" id="map-legend">
-                        <span class="label">Ceremony &amp; Reception</span>
-                        <ul>
-                            <li><a href="#" onclick="return maps.open('winery')">The Palm Event Center</a></li>
-                        </ul>
-                        <span class="label">Hotels</span>
-                        <ul>
-                            <li><a href="#" onclick="return maps.open('hot-crt')">Courtyard Marriott</a></li>
-                            <li><a href="#" onclick="return maps.open('hot-hmp')">Hampton Inn</a></li>
-                        </ul>
-                        <span class="label">Airports</span>
-                        <ul>
-                            <li><a href="#" onclick="return maps.open('air-oak')">Oakland Int'l Airport (OAK)</a></li>
-                            <li><a href="#" onclick="return maps.open('air-sjc')">San Jose Int'l Airport (SJC)</a></li>
-                            <li><a href="#" onclick="return maps.open('air-sfo')">San Francisco Int'l Airport (SFO)</a></li>
-                        </ul>
-                    </div>
-                    <div class="pure-u-1 pure-u-md-2-3" id="wedding-map"></div>
-                </div>
-            </div>
-            <a name="accomodations"></a>
-            <div class="filler">&nbsp;</div>
-            <div class="content-container accomodations-details">
-                <h1>Hotel Accomodations</h1>
-                <h2>Courtyard by Marriott</h2>
-                <p><i>Preferred hotel of the Bride and Groom.</i></p>
-                <p>We have a room block for <strong>Friday, May 20 - Sunday, May 22</strong> at <strong>$129 per night</strong>.
-                Shuttle to and from the venue will be provided.
-                Below is the link you can use to reserve rooms, or you can call and book under the</br>
-                <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Duldulao-Dizon%20Wedding%5Eoaklm%60DULDULA%7CDULDULB%60129.00%60USD%60false%604%605/20/16%605/22/16%604/22/16&app=resvlink&stop_mobi=yes"><strong>"Duldulao &amp; Dizon Wedding Group".</strong></a></br></br>
-                Please let us know if the rate is not available and we will contact the hotel to get additional rooms.</p>
-                <p><strong>Benefits:
-                    <ul>
-                        <li>Stay where we are staying!</li>
-                        <li>Free shuttle to and from the venue</li>
-                    </ul>
-                </strong></p>
-                <a href="assets/images/courtyardmarriot.jpg" class="imagelightbox">
-                    <img class="image-thumb" src="assets/images/courtyardmarriot.jpg"/>
-                </a>
-                <p><a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Duldulao-Dizon%20Wedding%5Eoaklm%60DULDULA%7CDULDULB%60129.00%60USD%60false%604%605/20/16%605/22/16%604/22/16&app=resvlink&stop_mobi=yes" target="_blank">Courtyard Livermore<br/>
-                2929 Constitution Drive<br/>
-                Livermore, California 94550<br/>
-                925-243-1000</a></p>
+        </section>
 
-                <h2>Hampton Inn by Hilton</h2>
-                <p>We have a room block for <strong>Friday, May 20 - Sunday, May 22</strong> at <strong>$109 per night</strong>.<br/>
-                You can call and book under the group name <strong>"Duldulao Dizon Wedding"</strong> or use the group code: <strong>WDD</strong>.</br></br>
+        <section id="proposal" class="section">
+            <div class="section-heading container">
+                <p class="eyebrow">The Engagement</p>
+                <h2 class="section-title">The moment it all started</h2>
+                <p class="section-lede">When Frances moved back home from Massachusetts, David promised to keep her close—and he proposed.</p>
+            </div>
+            <div class="container media-frame">
+                <iframe src="https://www.youtube.com/embed/FPimCVb5IhA" title="Proposal film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
 
-                Please let us know if the rate is not available and we will contact the hotel to get additional rooms.</p>
-                <p><strong>Benefits:
-                    <ul>
-                        <li>Free breakfast</li>
-                    </ul>
-                </strong></p>
-                <a href="assets/images/hamptoninn.jpg" class="imagelightbox">
-                    <img class="image-thumb" src="assets/images/hamptoninn.jpg"/>
-                </a>
-                <p><a href="http://hamptoninn3.hilton.com/en/hotels/california/hampton-inn-livermore-LVKCAHX/index.html" target="_blank">Hampton Inn<br/>
-                2850 Constitution Drive<br/>
-                Livermore CA 94551<br/>
-                925-606-6400</a></p>
+        <section id="highlights" class="section section-alt">
+            <div class="section-heading container">
+                <p class="eyebrow">Wedding Highlights</p>
+                <h2 class="section-title">A photo-first look at our day</h2>
+                <p class="section-lede">From getting ready to the last dance, these frames capture the energy, laughter, and love.</p>
             </div>
-            <a name="registry"></a>
-            <div class="filler">&nbsp;</div>
-            <div class="content-container registry">
-                <h1>Wedding Registry</h1>
-                <p>Since we furnished two separate apartments (San Jose and Boston), we do not really have too much we want to add to our things. Instead, we have things we can upgrade and funds for our future. You can see our item registry on <a href="http://registry.theknot.com/frances-duldulao-david-dizon-may-2016-ca/13028899" target="_blank">TheKnot's website</a>, and our funds registry on <a href="https://www.zola.com/registry/francesanddavid" target="_blank">Zola</a>.</p>
-                <span class="registries">
-                  <a href="http://registry.theknot.com/frances-duldulao-david-dizon-may-2016-ca/13028899" target="_blank"><img src="assets/images/theknot_logo1.PNG"/></a>
-                </span>
-                <span class="registries">
-                  <a href="https://www.zola.com/registry/francesanddavid" target="_blank"><img src="assets/images/zola_logo.jpg" width="130px" height="63px"/></a>
-                </span>
+            <div class="container photo-grid">
+                <figure class="photo-card">
+                    <img src="assets/images/wedding_highlight_groom.jpg" alt="David getting ready with a red tie"/>
+                </figure>
+                <figure class="photo-card">
+                    <img src="assets/images/wedding_highlight_bride_vineyard.jpg" alt="Frances in the vineyard with bouquet"/>
+                </figure>
+                <figure class="photo-card">
+                    <img src="assets/images/wedding_highlight_roses.jpg" alt="Close-up of the bouquet and smiles"/>
+                </figure>
+                <figure class="photo-card">
+                    <img src="assets/images/wedding_highlight_sunset.jpg" alt="Silhouette kiss at sunset"/>
+                </figure>
+                <figure class="photo-card">
+                    <img src="assets/images/wedding_highlight_money.jpg" alt="Playful wedding portrait with money garlands"/>
+                </figure>
+                <figure class="photo-card">
+                    <img src="assets/images/wedding_highlight_palms.jpg" alt="Night dance under palm trees"/>
+                </figure>
+                <figure class="photo-card">
+                    <img src="assets/images/wedding_highlight_chandeliers.jpg" alt="Couple dancing under chandeliers"/>
+                </figure>
             </div>
-            <a name="proposal"></a>
-            <div class="filler">&nbsp;</div>
-            <div class="content-container proposal">
-                <h1>The Proposal</h1>
-                <p>Once Frances moved back home from Massachusetts, David vowed to never leave her out of his sight and proposed.  Want to see how it was done?</p>
-                <p><iframe width="560" height="315" src="https://www.youtube.com/embed/FPimCVb5IhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        </section>
+
+        <section id="story" class="section">
+            <div class="section-heading container">
+                <p class="eyebrow">Our Story</p>
+                <h2 class="section-title">From UCSD to forever</h2>
+                <p class="section-lede">A friendship built on late-night study sessions, long-distance calls, and steady devotion.</p>
             </div>
-            <a name="story"></a>
-            <div class="filler">&nbsp;</div>
-            <div class="content-container story">
-                <h1>Our Story</h1>
-                <p>Frances and David met in college at UCSD and were part of the same Filipino organization. The first time Frances and David met, David, a 3rd year, gave directions to Frances, a lost 1st year looking for dance practice for their organization's annual production.  However it was not love at first sight.  After numerous beach outings, spending Frances' meal points, study sessions, movie nights, and summer hangouts their friendship grew into something more.</p>
-                <p>Over the years, their relationship has withstood the test of time and distance, never living in the same zip code since David graduated college.  Through numerous phone calls, FaceTiming, and the occasional online gaming, distance was a challenge, but an opportunity to connect at a deeper level. 7 years, 6 apartments, and 4 cities later, they are excited to spend the rest of their lives together.</p>
+            <div class="container split-feature">
+                <div class="split-card">
+                    <h3>Early days</h3>
+                    <p>Our first adventures were simple and full of laughter—concert nights, long walks, and milestones that made the distance feel smaller.</p>
+                </div>
+                <div class="split-media">
+                    <img src="assets/images/lupe_fiasco_concert_edited.jpg" alt="Early days at a Lupe Fiasco concert"/>
+                </div>
             </div>
-            <a name="photos"></a>
-            <div class="filler">&nbsp;</div>
-            <div class="content-container">
-              <h1>Photos</h1>
+            <div class="container split-feature reverse">
+                <div class="split-media">
+                    <img src="assets/images/first_anniversary_edited.jpg" alt="First anniversary portrait"/>
+                </div>
+                <div class="split-card">
+                    <h3>Growing together</h3>
+                    <p>Beach outings, shared meals, and movie nights turned their friendship into something more. Seven years, six apartments, and four cities later, we’re grateful for every chapter.</p>
+                </div>
+            </div>
+            <div class="container cta-card">
+                <div>
+                    <h3>Looking for the ceremony and travel details?</h3>
+                    <p>Find everything about the venue, hotels, and registry on our wedding details page.</p>
+                </div>
+                <a class="button-primary" href="/wedding.html">Wedding details</a>
+            </div>
+        </section>
+
+        <section id="photos" class="section section-alt">
+            <div class="section-heading container">
+              <p class="eyebrow">Photo Journal</p>
+              <h2 class="section-title">Favorite moments together</h2>
             </div>
             <div class="content-container photos">
-              <div id="flickr-set"/>
+              <div id="flickr-set"></div>
             </div>
-        </div>
-    </section>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        </section>
+    </main>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
     <script type="text/javascript" src="assets/js/imagesloaded.pkgd.min.js"></script>
     <script type="text/javascript" src="assets/js/imagelightbox.min.js"></script>
