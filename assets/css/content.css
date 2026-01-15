@@ -81,6 +81,9 @@ a:hover {
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     margin: 0;
+    transform: scale(0.95);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 .highlight-tile img {
