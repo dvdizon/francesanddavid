@@ -1,14 +1,15 @@
 'use strict'
 
-const hostname = 'francesanddavid.com';
-const port = 80;
 const Hapi = require('@hapi/hapi');
 const hbs = require('hbs');
 
-const init = async () => {
+const defaultHost = process.env.HOST || '0.0.0.0';
+const defaultPort = Number.parseInt(process.env.PORT, 10) || 3000;
+
+const startServer = async ({ host = defaultHost, port = defaultPort } = {}) => {
     const server = Hapi.server({
-        port: port,
-        host: hostname
+        port,
+        host
     });
 
     await server.register(require('@hapi/inert'));
@@ -60,14 +61,20 @@ const init = async () => {
             }
         }
     });
-    await server.start()
+
+    await server.start();
     console.log("Hapi server started @", server.info.uri);
+    return server;
 };
 
 
 process.on('unhandledRejection', (err) => {
-        console.log(err);
-        process.exit(1);
+    console.log(err);
+    process.exit(1);
 });
 
-init();
+if (require.main === module) {
+    startServer();
+}
+
+module.exports = { startServer };
