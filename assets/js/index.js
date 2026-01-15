@@ -176,3 +176,42 @@ $(window).load(function() {
         maps.load();
     }
 });
+
+var highlightGrid = document.querySelector('[data-highlight-grid]');
+if (highlightGrid) {
+    var highlightTiles = Array.prototype.slice.call(highlightGrid.querySelectorAll('.highlight-tile'));
+    var highlightSection = highlightGrid.closest('section') || highlightGrid;
+    var highlightTicking = false;
+
+    var clamp = function(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+    };
+
+    var updateHighlightTiles = function() {
+        var rect = highlightSection.getBoundingClientRect();
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        var progress = (windowHeight - rect.top) / (rect.height + windowHeight * 0.4);
+        var clampedProgress = clamp(progress, 0, 1);
+        var segment = 1 / highlightTiles.length;
+
+        highlightTiles.forEach(function(tile, index) {
+            var localProgress = clamp((clampedProgress - segment * index) / segment, 0, 1);
+            var scale = 0.95 + 0.1 * localProgress;
+            tile.style.transform = 'scale(' + scale.toFixed(3) + ')';
+            tile.style.boxShadow = '0 22px 50px rgba(12, 12, 12, ' + (0.08 + 0.12 * localProgress).toFixed(2) + ')';
+        });
+
+        highlightTicking = false;
+    };
+
+    var requestHighlightUpdate = function() {
+        if (!highlightTicking) {
+            window.requestAnimationFrame(updateHighlightTiles);
+            highlightTicking = true;
+        }
+    };
+
+    window.addEventListener('scroll', requestHighlightUpdate, { passive: true });
+    window.addEventListener('resize', requestHighlightUpdate);
+    requestHighlightUpdate();
+}
