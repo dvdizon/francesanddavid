@@ -1,20 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap");
 @import url("nav.css");
 @import url("content.css");
 @import url("photos.css");
 @import url("modal.css");
 
 :root {
-    --ink-900: #10131a;
-    --ink-700: #2f3642;
-    --ink-500: #5f6672;
-    --brand-600: #b2485a;
-    --brand-500: #c66a7c;
-    --brand-200: #f4d7dd;
-    --stone-50: #f8f6f5;
-    --stone-100: #f1eceb;
+    --ink-900: #0c0c0c;
+    --ink-700: #202020;
+    --ink-500: #545454;
+    --brand-600: #b04e5f;
+    --brand-500: #c06a78;
+    --brand-200: #f5e1e5;
+    --stone-50: #ffffff;
+    --stone-100: #f7f7f7;
     --white: #ffffff;
-    --shadow-soft: 0 25px 60px rgba(16, 19, 26, 0.12);
+    --shadow-soft: 0 22px 50px rgba(12, 12, 12, 0.12);
 }
 
 * {
@@ -29,9 +29,9 @@ body {
     padding: 0;
     margin: 0;
     -webkit-font-smoothing: antialiased;
-    font-family: "Manrope", sans-serif;
-    color: var(--ink-700);
-    background: var(--stone-50);
+    font-family: "Sora", sans-serif;
+    color: var(--ink-900);
+    background: var(--white);
 }
 
 img {
@@ -80,18 +80,18 @@ header nav {
 .button-primary {
     background: var(--brand-600);
     color: var(--white);
-    box-shadow: 0 15px 30px rgba(178, 72, 90, 0.25);
+    box-shadow: 0 14px 24px rgba(176, 78, 95, 0.2);
 }
 
 .button-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 20px 40px rgba(178, 72, 90, 0.28);
+    box-shadow: 0 18px 30px rgba(176, 78, 95, 0.26);
 }
 
 .button-secondary {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.9);
     color: var(--ink-900);
-    border: 1px solid rgba(16, 19, 26, 0.1);
+    border: 1px solid rgba(176, 78, 95, 0.2);
 }
 
 .button-secondary:hover {
@@ -136,7 +136,7 @@ header nav {
 }
 
 .hero h1 {
-    font-family: "Playfair Display", serif;
+    font-family: "Sora", sans-serif;
     font-weight: 600;
     font-size: clamp(2.8rem, 6vw, 4.5rem);
     margin: 0 0 1rem;
