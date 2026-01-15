@@ -69,11 +69,11 @@ a:hover {
 
 .highlight-grid {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-auto-rows: minmax(180px, 240px);
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: minmax(240px, 420px);
+    gap: 2rem;
     width: min(1200px, 92%);
-    margin: 0 auto;
+    margin: 2.5rem auto 0;
 }
 
 .highlight-tile {
@@ -84,6 +84,8 @@ a:hover {
     transform: scale(0.95);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     will-change: transform;
+    width: 100%;
+    justify-self: center;
 }
 
 .highlight-tile img {
@@ -92,18 +94,28 @@ a:hover {
     object-fit: cover;
 }
 
+@media (min-width: 1024px) {
+    .highlight-grid {
+        grid-auto-rows: minmax(320px, 520px);
+    }
+
+    .highlight-tile {
+        width: clamp(800px, 70vw, 1100px);
+    }
+}
+
 .highlight-tile--large {
-    grid-column: span 7;
-    grid-row: span 2;
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
 .highlight-tile--medium {
-    grid-column: span 5;
-    grid-row: span 2;
+    grid-column: span 1;
+    grid-row: span 1;
 }
 
 .highlight-tile--standard {
-    grid-column: span 4;
+    grid-column: span 1;
 }
 
 .image-panel {
@@ -442,13 +454,16 @@ a:hover {
 
 @media (max-width: 900px) {
     .highlight-grid {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1fr);
+        grid-auto-rows: minmax(220px, 320px);
+        gap: 1.5rem;
+        margin-top: 2rem;
     }
 
     .highlight-tile--large,
     .highlight-tile--medium,
     .highlight-tile--standard {
-        grid-column: span 6;
+        grid-column: span 1;
     }
 
     .image-panel {
