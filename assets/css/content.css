@@ -2,7 +2,7 @@
 CONTENT STYLES
  */
 
-a, a:visited {
+a {
     color: var(--brand-600);
 }
 
