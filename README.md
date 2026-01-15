@@ -31,6 +31,20 @@ These steps assume Ubuntu on your Droplet and that you want to keep costs low by
    sudo apt upgrade -y
    ```
 
+   **Troubleshooting (DigitalOcean droplet agent repo):** If `apt update` fails with a
+   `NO_PUBKEY 35696F43FC7DB4C2` error or a 404 for `droplet-agent`, refresh the repo
+   key or remove the legacy source before retrying:
+
+   ```bash
+   # Option A: refresh the droplet agent repo key
+   curl -fsSL https://repos-droplet.digitalocean.com/gpgkey | \
+     sudo gpg --dearmor -o /usr/share/keyrings/droplet-agent-archive.gpg
+
+   # Option B: remove the droplet agent source if you don't need it
+   sudo rm -f /etc/apt/sources.list.d/droplet-agent.list
+   sudo apt update
+   ```
+
 2. **Install Node.js 20 LTS (or 18 LTS) and npm:**
 
    ```bash
