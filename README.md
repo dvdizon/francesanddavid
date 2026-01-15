@@ -118,3 +118,13 @@ These steps assume Ubuntu on your Droplet and that you want to keep costs low by
 
    If you see `npm warn Unknown env config "http-proxy"`, unset any `npm_config_http_proxy`
    (or similar) environment variables before running npm again.
+
+### HTTPS (Certbot + Nginx)
+
+If HTTPS is not working after you set up Nginx, make sure an SSL (port 443) server block exists for your domain. The easiest fix is to let Certbot configure it for you:
+
+```bash
+sudo apt install -y certbot python3-certbot-nginx
+sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+
+
