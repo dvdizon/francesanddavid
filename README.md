@@ -19,6 +19,25 @@ Using:
 npm install
 npm run local
 ```
+## Running on Windows
+
+`npm run local` sets environment variables using a Unix-style prefix, so on Windows start the server
+by setting `HOST` and `PORT` in your shell first.
+
+**PowerShell**
+```powershell
+$env:HOST="127.0.0.1"
+$env:PORT="8000"
+node index.js
+```
+
+**Command Prompt (cmd.exe)**
+```cmd
+set HOST=127.0.0.1
+set PORT=8000
+node index.js
+```
+
 
 ## Deploying to a DigitalOcean Droplet
 

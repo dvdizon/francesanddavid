@@ -2,75 +2,271 @@
 CONTENT STYLES
  */
 
-.content {
-    /* These styles are required for the "scroll-over" effect */
-    min-height: 12%;
-    z-index: 2;
-    background: white;
-    width: 100%;
-    /* Background pattern from subtlepatterns.com */
-    background: url("/assets/images/seamless_paper_texture.png") repeat;
-}
-
-a, a:visited {
-    color: maroon;
+a {
+    color: var(--brand-600);
 }
 
 a:hover {
     text-decoration: none;
 }
 
-.content h1 {
-    color: #C51919;
+.content {
+    min-height: 100vh;
+    background: var(--stone-50);
+    padding: 5rem 0 3rem;
 }
 
 .content-container {
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+    width: min(900px, 90%);
+    margin: 0 auto;
 }
 
 .filler {
-    height: 50px;
-    background-color: #FFFFFF;
-    opacity: 0.7;
+    height: 32px;
 }
 
-.content-container.wedding-details {
+.section {
+    padding: 5rem 0;
+    background: var(--stone-50);
+}
+
+.section-alt {
+    background: var(--stone-100);
+}
+
+.section-heading {
     text-align: center;
+    margin-bottom: 3rem;
 }
 
-div.content div.content-container.photos {
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 1rem;
+    color: var(--ink-900);
+}
+
+.section-lede {
+    margin: 0 auto;
+    max-width: 720px;
+    font-size: 1.05rem;
+    color: var(--ink-500);
+    line-height: 1.7;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.photo-card {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    background: var(--white);
+    margin: 0;
+}
+
+.photo-card img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.wedding-details h1 {
-    margin-bottom: 0px;
+.split-feature {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
 }
 
-.wedding-details .big-details.date {
-    font-size: 390%;
-}
-.wedding-details .big-details.location {
-    font-size: 300%;
+.split-feature.reverse {
+    direction: rtl;
 }
 
-.wedding-details .big-details-container {
-    background-color: #FFFFFF;
+.split-feature.reverse > * {
+    direction: ltr;
+}
+
+.split-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.split-card h3 {
+    margin-top: 0;
+    color: var(--ink-900);
+}
+
+.split-media img {
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.cta-card {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 24px;
+    background: var(--white);
+    box-shadow: var(--shadow-soft);
+}
+
+.cta-card h3 {
+    margin: 0 0 0.5rem;
+    color: var(--ink-900);
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(16, 19, 26, 0.04);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    color: var(--ink-900);
+}
+
+.card-highlight {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brand-600);
+}
+
+.address {
+    color: var(--ink-500);
+    font-size: 0.95rem;
+}
+
+.media-frame {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    background: var(--white);
+    margin: 0 auto 2.5rem;
+    width: min(100%, 920px);
+}
+
+.media-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.venue-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.image-thumb {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 12px 25px rgba(16, 19, 26, 0.12);
+}
+
+.map-grid {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.map-legend {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-soft);
+    font-size: 0.95rem;
+}
+
+.map-legend .label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    color: var(--ink-500);
+    margin-bottom: 0.75rem;
     display: inline-block;
-    padding: 30px;
-    margin: 10px 0px 20px 0px;
-    border: 2px dashed #D4D4D4;
-    border-radius: 4px;
 }
 
-.wedding-details .big-details {
-    font-size: 250%;
-    font-family: 'Great Vibes', cursive;
-    display: block;
-    color: #C51919;
+.legend-group + .legend-group {
+    margin-top: 1.5rem;
+}
+
+.map-legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.map-legend li {
+    margin-bottom: 0.5rem;
+}
+
+.map-canvas {
+    border-radius: 24px;
+    min-height: 420px;
+    box-shadow: var(--shadow-soft);
+}
+
+.registry-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.story-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.story-card h3 {
+    margin-top: 0;
+    color: var(--ink-900);
+}
+
+.content-container.photos {
+    width: min(1100px, 95%);
+    margin: 0 auto;
 }
 
 .wedding-party-details,
@@ -78,18 +274,17 @@ div.content div.content-container.photos {
     text-align: center;
     width: auto;
     margin: 0 0 20px 0;
-    background: #FFFFFF;
-    padding: 20px;
-}
-
-.ceremony-title,
-.wedding-party-title {
-    width: auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
 }
 
 .ceremony-title h1,
 .wedding-party-title h1 {
     text-align: center;
+    font-family: \"Playfair Display\", serif;
+    color: var(--ink-900);
 }
 
 .wedding-party-details span,
@@ -98,99 +293,88 @@ div.content div.content-container.photos {
 }
 
 .ceremony-details .label {
-    font-size: 360%;
-    font-family: 'Great Vibes', cursive;
-    border-top: 1px solid #ECECEC;
+    font-size: 1.2rem;
+    font-family: \"Playfair Display\", serif;
+    border-top: 1px solid #ececec;
     margin-top: 15px;
     padding-top: 5px;
+    color: var(--brand-600);
 }
 
 .ceremony-details .names {
-    font-size: 150%;
+    font-size: 1rem;
+    color: var(--ink-500);
 }
 
 .wedding-party-details .label {
     text-transform: uppercase;
-    font-weight: bold;
-    font-family: 'Sura', serif;
-    border-top: 1px solid #ECECEC;
+    font-weight: 600;
+    font-family: \"Manrope\", sans-serif;
+    border-top: 1px solid #ececec;
     margin-top: 15px;
     padding-top: 5px;
-    font-size: 180%;
+    font-size: 0.95rem;
+    color: var(--ink-700);
 }
 
 .wedding-party-details .names {
     font-style: italic;
-    font-family: 'Sura', serif;
-    font-size: 150%;
+    font-family: \"Manrope\", sans-serif;
+    font-size: 1rem;
+    color: var(--ink-500);
 }
 
-#pleaseNoPhotos {
-    font-size: 150%;
-}
-
-.no-photos-context img {
-    display: block;
-    margin: auto;
-}
-
-.do-not-take-photos {
-    font-weight: bold;
-}
-
-span.registries {
-    display: inline-block;
-    padding-right: 10px;
-}
-
-.image-thumb {
-    width: 300px;
-    height: 200px;
-}
-
-/* Text and photo styles */
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
-}
-
-.portrait-small {
-    width: 150px;
-    margin: 10px;
-}
-
-/* Maps */
-
-#wedding-map {
-    height: 420px;
-}
-
-#map-container {
-    background: white;
-    padding: 10px;
-    margin-bottom: 20px;
-}
 #mapcontent {
     width: 350px;
     height: 70px;
 }
+
 #mapcontent h1 {
     font-size: 15px;
     margin: 0;
 }
+
 #mapcontent .address {
     font-style: italic;
 }
+
 #mapcontent .phone {
     font-style: italic;
 }
+
 #mapcontent img {
     float: left;
     padding-right: 5px;
 }
+
 #mapcontent .content {
     float: left;
+}
+
+@media (max-width: 900px) {
+    .map-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-canvas {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 3.5rem 0;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .media-frame {
+        border-radius: 18px;
+    }
+
+    .image-thumb {
+        height: 200px;
+    }
 }

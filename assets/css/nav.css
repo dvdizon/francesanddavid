@@ -3,14 +3,31 @@ NAVIGATION STYLES
  */
 
 #menu .pure-menu-item a.pure-menu-link {
-    color: #333;
+    color: var(--ink-700);
     text-transform: uppercase;
-    border-radius: 4px;
-    font-family: 'Sura', serif;
+    border-radius: 999px;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    padding: 0.6rem 1rem;
+}
+
+#menu .pure-menu-item a.pure-menu-link:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 #menu .pure-menu ul.pure-menu-list {
     margin-right: 10px;
+}
+
+#page-title {
+    margin: 0;
+}
+
+.custom-brand {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.08em;
+    color: var(--ink-900);
 }
 
 /*
@@ -18,20 +35,21 @@ NAVIGATION STYLES
 */
 .custom-wrapper {
     -webkit-font-smoothing: antialiased;
-    height: 2.5em;
+    height: 3.5em;
     overflow: hidden;
     -webkit-transition: height 0.5s;
     -moz-transition: height 0.5s;
     -ms-transition: height 0.5s;
     transition: height 0.5s;
     width: 100%;
-    background-color: #E3E8EC;
-    opacity: 0.85;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(16, 19, 26, 0.08);
 }
 
 /*MODIFY: When adding a new menu button 3em per item*/
 .custom-wrapper.open {
-    height: 26em;
+    height: 24em;
 }
 /*MODIFY: When adding a new menu button 3em per item*/
 .custom-wrapper.program.open {
@@ -47,13 +65,13 @@ NAVIGATION STYLES
     height: 34px;
     display: block;
     position: absolute;
-    top: 0;
+    top: 0.35rem;
     right: 0;
     display: none;
 }
 
 .custom-toggle .bar {
-    background-color: #777;
+    background-color: var(--ink-700);
     display: block;
     width: 20px;
     height: 2px;
@@ -99,7 +117,6 @@ NAVIGATION STYLES
     }
 
     .pure-menu-item a.pure-menu-link {
-        font-size: 1.5em;
+        font-size: 0.9rem;
     }
-
 }

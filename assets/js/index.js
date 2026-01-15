@@ -7,8 +7,8 @@ $.getJSON("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhot
     var list = $("<ul class='flickr-container'></ul>");
     $.each(data.photoset.photo, function (i, item) {
         //build the url of the photo in order to link to it
-        var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
-        var bigPhotoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg';
+        var photoURL = 'https://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
+        var bigPhotoURL = 'https://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg';
         var photo = $('<img/>').attr('src', photoURL)
         .attr('class', 'item flickr-photo');
         var a = $('<a href="' + bigPhotoURL + '" class="imagelightbox"/>');
@@ -157,7 +157,7 @@ var maps = {
             maps.markers[index] = new google.maps.Marker({
                 position: value.loc,
                 map: maps.map,
-                icon: 'http://google-maps-icons.googlecode.com/files/' + value.icon,
+                icon: 'https://google-maps-icons.googlecode.com/files/' + value.icon,
                 title: value.title
             });
             google.maps.event.addListener(maps.markers[index], 'click', function() {
@@ -172,5 +172,7 @@ var maps = {
 }
 
 $(window).load(function() {
-    maps.load();
+    if (document.getElementById("wedding-map")) {
+        maps.load();
+    }
 });
