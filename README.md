@@ -52,6 +52,18 @@ These steps assume Ubuntu on your Droplet and that you want to keep costs low by
    sudo apt install -y nodejs
    ```
 
+   **Troubleshooting (NodeSource GPG key):** If `apt update` or `apt install` fails with
+   `NO_PUBKEY 2F59B5F99B1BE0B4`, refresh the NodeSource key and repo, then retry:
+
+   ```bash
+   curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | \
+     sudo gpg --dearmor -o /usr/share/keyrings/nodesource.gpg
+   echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | \
+     sudo tee /etc/apt/sources.list.d/nodesource.list
+   sudo apt update
+   sudo apt install -y nodejs
+   ```
+
 3. **Clone the repository and install production dependencies:**
 
    ```bash

@@ -8,6 +8,8 @@ Modernize the existing DigitalOcean Droplet deployment while keeping costs low a
 - [ ] If `apt update` fails due to a missing DigitalOcean droplet agent key or 404s,
   refresh the repo key or remove the legacy droplet-agent source before retrying.
 - [ ] Install a modern Node.js LTS (18 or 20) via Nodesource or `nvm`.
+- [ ] If NodeSource install fails with `NO_PUBKEY 2F59B5F99B1BE0B4`, refresh the
+  NodeSource GPG key and repo before retrying the Node install.
 - [ ] Clone this repository to the Droplet and install dependencies with `npm install --omit=dev`.
 - [ ] Configure environment variables:
   - `HOST=0.0.0.0`
