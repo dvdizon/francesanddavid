@@ -24,8 +24,9 @@
 - **Story text:**
   - “When Frances moved back home from Massachusetts, David promised to keep her close—and he proposed.”
   - “That quiet promise turned into a celebration, the start of a timeline the two of them keep adding to every year.”
-- **Image:** `assets/images/engagement.jpg` — “Frances and David engagement portrait”
+- **Background image:** `assets/images/wedding_highlight_palms.jpg` — “Night dance under palm trees”
 - **Video (YouTube embed):** https://www.youtube.com/embed/FPimCVb5IhA
+  - **CTA:** “2014 proposal film” scrolls to the proposal film section.
 
 ### College Beginnings
 - **Heading:** How they met at UCSD
@@ -33,9 +34,8 @@
 - **Story blocks:**
   - **Campus nights:** “They met in college, bonding over group projects and long talks that stretched into the early hours. The friendship felt effortless and steady from the start.”
   - **Favorite memories:** “Concert nights, beach sunsets, and every first apartment meal became the stories they still laugh about today.”
-- **Images:**
-  - `assets/images/lupe_fiasco_concert_edited.jpg` — “Early days at a Lupe Fiasco concert”
-  - `assets/images/first_anniversary_edited.jpg` — “First anniversary portrait”
+- **Background image:** `assets/images/geisel_library_ucsd.svg` — “Geisel Library at UC San Diego”
+- **Image:** `assets/images/first_anniversary_edited.jpg` — “First anniversary portrait”
 
 ### Photo Journal
 - **Heading:** Snapshots they keep adding to

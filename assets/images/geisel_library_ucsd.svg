@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1600">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1b2b4a"/>
+      <stop offset="55%" stop-color="#2b4b6f"/>
+      <stop offset="100%" stop-color="#d9c9b3"/>
+    </linearGradient>
+    <linearGradient id="plaza" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#d8cbb9"/>
+      <stop offset="100%" stop-color="#bcae9d"/>
+    </linearGradient>
+  </defs>
+  <rect width="2400" height="1600" fill="url(#sky)"/>
+  <rect y="1120" width="2400" height="480" fill="url(#plaza)"/>
+  <rect y="980" width="2400" height="180" fill="#3e4b59" opacity="0.4"/>
+  <g transform="translate(300 420)">
+    <rect x="360" y="520" width="1080" height="260" fill="#4b4b4f"/>
+    <rect x="420" y="420" width="960" height="110" fill="#3e3f44"/>
+    <rect x="520" y="320" width="760" height="120" fill="#2f3138"/>
+    <rect x="600" y="180" width="600" height="160" fill="#252730"/>
+    <g fill="#1f2026">
+      <polygon points="0,520 320,420 320,760 0,820"/>
+      <polygon points="1800,520 1480,420 1480,760 1800,820"/>
+    </g>
+    <g fill="#343843">
+      <rect x="0" y="820" width="1800" height="140"/>
+      <rect x="140" y="780" width="1500" height="60"/>
+    </g>
+    <g fill="#1b1c21" opacity="0.65">
+      <rect x="720" y="230" width="360" height="90"/>
+      <rect x="690" y="340" width="420" height="60"/>
+    </g>
+  </g>
+  <g fill="#f4efe6" opacity="0.18">
+    <circle cx="420" cy="320" r="6"/>
+    <circle cx="520" cy="240" r="4"/>
+    <circle cx="1920" cy="300" r="5"/>
+    <circle cx="1680" cy="220" r="4"/>
+  </g>
+</svg>
