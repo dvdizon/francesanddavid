@@ -177,41 +177,60 @@ $(window).load(function() {
     }
 });
 
-var highlightGrid = document.querySelector('[data-highlight-grid]');
-if (highlightGrid) {
-    var highlightTiles = Array.prototype.slice.call(highlightGrid.querySelectorAll('.highlight-tile'));
-    var highlightSection = highlightGrid.closest('section') || highlightGrid;
-    var highlightTicking = false;
+var scrollSections = Array.prototype.slice.call(document.querySelectorAll('[data-scroll-section]'));
+var revealTargets = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+var scrollTicking = false;
 
-    var clamp = function(value, min, max) {
-        return Math.min(Math.max(value, min), max);
-    };
+var clamp = function(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+};
 
-    var updateHighlightTiles = function() {
-        var rect = highlightSection.getBoundingClientRect();
-        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        var progress = (windowHeight - rect.top) / (rect.height + windowHeight * 0.4);
-        var clampedProgress = clamp(progress, 0, 1);
-        var segment = 1 / highlightTiles.length;
+var updateScrollPanels = function() {
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-        highlightTiles.forEach(function(tile, index) {
-            var localProgress = clamp((clampedProgress - segment * index) / segment, 0, 1);
-            var scale = 0.95 + 0.1 * localProgress;
-            tile.style.transform = 'scale(' + scale.toFixed(3) + ')';
-            tile.style.boxShadow = '0 22px 50px rgba(12, 12, 12, ' + (0.08 + 0.12 * localProgress).toFixed(2) + ')';
-        });
-
-        highlightTicking = false;
-    };
-
-    var requestHighlightUpdate = function() {
-        if (!highlightTicking) {
-            window.requestAnimationFrame(updateHighlightTiles);
-            highlightTicking = true;
+    scrollSections.forEach(function(section) {
+        var foreground = section.querySelector('[data-scroll-foreground]');
+        if (!foreground) {
+            return;
         }
-    };
 
-    window.addEventListener('scroll', requestHighlightUpdate, { passive: true });
-    window.addEventListener('resize', requestHighlightUpdate);
-    requestHighlightUpdate();
+        var rect = section.getBoundingClientRect();
+        var progress = (viewportHeight - rect.top) / (rect.height + viewportHeight);
+        var clampedProgress = clamp(progress, 0, 1);
+        var offset = (0.5 - clampedProgress) * 140;
+
+        foreground.style.setProperty('--scroll-offset', offset.toFixed(1) + 'px');
+    });
+
+    scrollTicking = false;
+};
+
+var requestScrollUpdate = function() {
+    if (!scrollTicking) {
+        window.requestAnimationFrame(updateScrollPanels);
+        scrollTicking = true;
+    }
+};
+
+if (scrollSections.length) {
+    window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+    window.addEventListener('resize', requestScrollUpdate);
+    requestScrollUpdate();
+}
+
+if (revealTargets.length) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    revealTargets.forEach(function(target) {
+        revealObserver.observe(target);
+    });
 }

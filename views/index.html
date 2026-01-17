@@ -17,7 +17,7 @@
     <!--<![endif]-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css"/>
 </head>
-<body>
+<body class="theme-immersive">
     <header>
         <nav class="custom-wrapper pure-g" id="menu">
             <div class="pure-u-1 pure-u-md-1-6">
@@ -35,96 +35,122 @@
                         <li class="pure-menu-item"><a href="#highlights" class="pure-menu-link">Highlights</a></li>
                         <li class="pure-menu-item"><a href="#engagement" class="pure-menu-link">Engagement</a></li>
                         <li class="pure-menu-item"><a href="#story" class="pure-menu-link">Story</a></li>
+                        <li class="pure-menu-item"><a href="#references" class="pure-menu-link">Details</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main id="top">
-        <section id="film" class="section">
-            <div class="section-heading container">
-                <p class="eyebrow">Wedding Film</p>
-                <h2 class="section-title">The vows, the cheers, the first dance</h2>
-                <p class="section-lede">The wedding day memories locked in a time capsule.</p>
-            </div>
-            <div class="container media-frame">
+        <section id="film" class="hero-video">
+            <div class="hero-video-media">
                 <iframe src="https://player.vimeo.com/video/171783323?autoplay=1&muted=1&autopause=0&title=0&byline=0&portrait=0" title="Wedding film" frameborder="0" allow="autoplay; fullscreen"></iframe>
             </div>
-        </section>
-
-        <section id="highlights" class="section section-alt">
-            <div class="section-heading container">
-                <p class="eyebrow">Wedding Highlights</p>
-                <h2 class="section-title">A decade later, the day still glows</h2>
-                <p class="section-lede">Ten years on, these snapshots still feel like the opening chapter of everything that followed.</p>
-            </div>
-            <div class="highlight-grid" data-highlight-grid>
-                <figure class="highlight-tile highlight-tile--large">
-                    <img src="assets/images/wedding_highlight_bride_vineyard.jpg" alt="Frances in the vineyard with bouquet"/>
-                </figure>
-                <figure class="highlight-tile highlight-tile--medium">
-                    <img src="assets/images/wedding_highlight_sunset.jpg" alt="Silhouette kiss at sunset"/>
-                </figure>
-                <figure class="highlight-tile highlight-tile--standard">
-                    <img src="assets/images/wedding_highlight_groom.jpg" alt="David getting ready with a red tie"/>
-                </figure>
-                <figure class="highlight-tile highlight-tile--standard">
-                    <img src="assets/images/wedding_highlight_roses.jpg" alt="Close-up of the bouquet and smiles"/>
-                </figure>
-                <figure class="highlight-tile highlight-tile--standard">
-                    <img src="assets/images/wedding_highlight_money.jpg" alt="Playful wedding portrait with money garlands"/>
-                </figure>
-                <figure class="highlight-tile highlight-tile--standard">
-                    <img src="assets/images/wedding_highlight_palms.jpg" alt="Night dance under palm trees"/>
-                </figure>
-                <figure class="highlight-tile highlight-tile--standard">
-                    <img src="assets/images/wedding_highlight_chandeliers.jpg" alt="Couple dancing under chandeliers"/>
-                </figure>
-            </div>
-        </section>
-
-        <section id="engagement" class="section">
-            <div class="section-heading container">
-                <p class="eyebrow">The Engagement</p>
-                <h2 class="section-title">A promise kept close</h2>
-            </div>
-            <div class="image-panel">
-                <img src="assets/images/engagement.jpg" alt="Frances and David engagement portrait"/>
-                <div class="image-panel-content">
-                    <h3>When Frances moved back home from Massachusetts, David promised to keep her close—and he proposed.</h3>
-                    <p>That quiet promise turned into a celebration, the start of a timeline the two of them keep adding to every year.</p>
+            <div class="hero-video-overlay"></div>
+            <div class="hero-video-content" data-reveal>
+                <p class="eyebrow">Wedding Film</p>
+                <h1>The vows, the cheers, the first dance</h1>
+                <p class="hero-subtitle">The wedding day memories locked in a time capsule.</p>
+                <div class="hero-actions">
+                    <a class="button-primary" href="#highlights">Begin the story</a>
+                    <a class="button-secondary" href="#references">Wedding details</a>
                 </div>
+                <div class="hero-scroll">
+                    <span>Scroll</span>
+                    <span class="hero-scroll-line"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="highlights" class="scroll-panel" data-scroll-section>
+            <div class="scroll-panel-media" data-scroll-media>
+                <img src="assets/images/wedding_highlight_bride_vineyard.jpg" alt="Frances in the vineyard with bouquet"/>
+            </div>
+            <div class="scroll-panel-content">
+                <div class="scroll-panel-foreground" data-scroll-foreground data-reveal>
+                    <div class="panel-card">
+                        <p class="eyebrow">Wedding Highlights</p>
+                        <h2 class="section-title">A decade later, the day still glows</h2>
+                        <p class="section-lede">Ten years on, these snapshots still feel like the opening chapter of everything that followed.</p>
+                        <div class="panel-gallery">
+                            <img src="assets/images/wedding_highlight_sunset.jpg" alt="Silhouette kiss at sunset"/>
+                            <img src="assets/images/wedding_highlight_groom.jpg" alt="David getting ready with a red tie"/>
+                            <img src="assets/images/wedding_highlight_roses.jpg" alt="Close-up of the bouquet and smiles"/>
+                            <img src="assets/images/wedding_highlight_money.jpg" alt="Playful wedding portrait with money garlands"/>
+                            <img src="assets/images/wedding_highlight_palms.jpg" alt="Night dance under palm trees"/>
+                            <img src="assets/images/wedding_highlight_chandeliers.jpg" alt="Couple dancing under chandeliers"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="engagement" class="scroll-panel" data-scroll-section>
+            <div class="scroll-panel-media" data-scroll-media>
+                <img src="assets/images/engagement.jpg" alt="Frances and David engagement portrait"/>
+            </div>
+            <div class="scroll-panel-content">
+                <div class="scroll-panel-foreground" data-scroll-foreground data-reveal>
+                    <div class="panel-card">
+                        <p class="eyebrow">The Engagement</p>
+                        <h2 class="section-title">A promise kept close</h2>
+                        <p class="section-lede">When Frances moved back home from Massachusetts, David promised to keep her close—and he proposed. That quiet promise turned into a celebration, the start of a timeline the two of them keep adding to every year.</p>
+                        <div class="panel-icon-row">
+                            <div class="icon-chip">
+                                <span class="icon-chip-symbol">❤</span>
+                                <span>2015 proposal film</span>
+                            </div>
+                            <div class="icon-chip">
+                                <span class="icon-chip-symbol">✧</span>
+                                <span>Vows to grow together</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-immersive" id="proposal-film">
+            <div class="section-heading container" data-reveal>
+                <p class="eyebrow">Proposal Film</p>
+                <h2 class="section-title">The moment that started it all</h2>
+                <p class="section-lede">A cinematic keepsake to revisit every anniversary.</p>
             </div>
             <div class="container media-frame">
                 <iframe src="https://www.youtube.com/embed/FPimCVb5IhA" title="Proposal film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
-        <section id="story" class="section section-alt">
-            <div class="section-heading container">
-                <p class="eyebrow">College Beginnings</p>
-                <h2 class="section-title">How they met at UCSD</h2>
-                <p class="section-lede">Study sessions, late-night meals, and spontaneous adventures laid the foundation for everything that followed.</p>
+        <section id="story" class="scroll-panel" data-scroll-section>
+            <div class="scroll-panel-media" data-scroll-media>
+                <img src="assets/images/lupe_fiasco_concert_edited.jpg" alt="Early days at a Lupe Fiasco concert"/>
             </div>
-            <div class="container split-feature">
-                <div class="split-card">
-                    <h3>Campus nights</h3>
-                    <p>They met in college, bonding over group projects and long talks that stretched into the early hours. The friendship felt effortless and steady from the start.</p>
-                </div>
-                <div class="split-media">
-                    <img src="assets/images/lupe_fiasco_concert_edited.jpg" alt="Early days at a Lupe Fiasco concert"/>
+            <div class="scroll-panel-content">
+                <div class="scroll-panel-foreground" data-scroll-foreground data-reveal>
+                    <div class="panel-card">
+                        <p class="eyebrow">College Beginnings</p>
+                        <h2 class="section-title">How they met at UCSD</h2>
+                        <p class="section-lede">Study sessions, late-night meals, and spontaneous adventures laid the foundation for everything that followed.</p>
+                        <div class="panel-story-grid">
+                            <div>
+                                <h3>Campus nights</h3>
+                                <p>They met in college, bonding over group projects and long talks that stretched into the early hours. The friendship felt effortless and steady from the start.</p>
+                            </div>
+                            <div>
+                                <h3>Favorite memories</h3>
+                                <p>Concert nights, beach sunsets, and every first apartment meal became the stories they still laugh about today.</p>
+                            </div>
+                        </div>
+                        <div class="panel-image-strip">
+                            <img src="assets/images/first_anniversary_edited.jpg" alt="First anniversary portrait"/>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="container split-feature reverse">
-                <div class="split-media">
-                    <img src="assets/images/first_anniversary_edited.jpg" alt="First anniversary portrait"/>
-                </div>
-                <div class="split-card">
-                    <h3>Favorite memories</h3>
-                    <p>Concert nights, beach sunsets, and every first apartment meal became the stories they still laugh about today.</p>
-                </div>
-            </div>
-            <div class="section-heading container">
+        </section>
+
+        <section id="journal" class="section section-alt">
+            <div class="section-heading container" data-reveal>
                 <p class="eyebrow">Photo Journal</p>
                 <h2 class="section-title">Snapshots they keep adding to</h2>
             </div>
@@ -134,7 +160,7 @@
         </section>
 
         <section id="references" class="section">
-            <div class="container reference-links">
+            <div class="container reference-links" data-reveal>
                 <p class="eyebrow">Reference Links</p>
                 <p>Wedding details are here for quick reference: <a href="/wedding.html">Wedding details</a> · <a href="/program">Wedding program</a></p>
             </div>
