@@ -19,6 +19,10 @@ Using:
 npm install
 npm run local
 ```
+
+`npm run local` binds to `0.0.0.0` so browser automation and screenshot tools can reach the server through forwarded ports.
+If you only bind to `127.0.0.1`, external browser containers will return a Not Found page.
+
 ## Running on Windows
 
 `npm run local` sets environment variables using a Unix-style prefix, so on Windows start the server
@@ -26,14 +30,14 @@ by setting `HOST` and `PORT` in your shell first.
 
 **PowerShell**
 ```powershell
-$env:HOST="127.0.0.1"
+$env:HOST="0.0.0.0"
 $env:PORT="8000"
 node index.js
 ```
 
 **Command Prompt (cmd.exe)**
 ```cmd
-set HOST=127.0.0.1
+set HOST=0.0.0.0
 set PORT=8000
 node index.js
 ```
@@ -159,3 +163,4 @@ sudo apt install -y certbot python3-certbot-nginx
 sudo certbot --nginx -d your-domain.com -d www.your-domain.com
 
 
+```
