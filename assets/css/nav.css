@@ -3,7 +3,7 @@ NAVIGATION STYLES
  */
 
 #menu .pure-menu-item a.pure-menu-link {
-    color: var(--ink-700);
+    color: var(--nav-text);
     text-transform: uppercase;
     border-radius: 999px;
     font-family: "Sora", sans-serif;
@@ -13,7 +13,7 @@ NAVIGATION STYLES
 }
 
 #menu .pure-menu-item a.pure-menu-link:hover {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 #menu .pure-menu ul.pure-menu-list {
@@ -27,7 +27,7 @@ NAVIGATION STYLES
 .custom-brand {
     font-family: "Sora", sans-serif;
     letter-spacing: 0.08em;
-    color: var(--ink-900);
+    color: var(--nav-text);
 }
 
 /*
@@ -42,9 +42,9 @@ NAVIGATION STYLES
     -ms-transition: height 0.5s;
     transition: height 0.5s;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(16, 19, 26, 0.08);
+    border-bottom: 1px solid var(--nav-border);
 }
 
 /*MODIFY: When adding a new menu button 3em per item*/
@@ -71,7 +71,7 @@ NAVIGATION STYLES
 }
 
 .custom-toggle .bar {
-    background-color: var(--ink-700);
+    background-color: var(--nav-text);
     display: block;
     width: 20px;
     height: 2px;
