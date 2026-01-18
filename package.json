@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node tests/smoke-test.js",
     "start": "node index.js",
-    "local": "HOST=0.0.0.0 PORT=8000 node index.js"
+    "local": "HOST=0.0.0.0 node index.js"
   },
   "author": "David Dizon",
   "license": "MIT",
