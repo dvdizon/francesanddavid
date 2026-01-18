@@ -15,6 +15,7 @@ $(function() {
         // set layoutMode
         layoutMode: 'masonry',
         isInitLayout: false,
+        fitWidth: true,
         masonry: {
             gutter: 5
         }

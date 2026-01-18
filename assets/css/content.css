@@ -426,6 +426,12 @@ a:hover {
     filter: saturate(0.95);
 }
 
+@media (max-width: 768px) {
+    #engagement .scroll-panel-media img {
+        object-position: 60% center;
+    }
+}
+
 .scroll-panel-content {
     position: relative;
     min-height: 110vh;
@@ -787,4 +793,3 @@ a:hover {
         height: 200px;
     }
 }
-
