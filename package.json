@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/smoke-test.js",
+    "test": "node tests/smoke-test.js && node tests/browser-modal-test.js && node tests/browser-scroll-panel-test.js",
     "start": "node index.js",
     "local": "HOST=0.0.0.0 node index.js"
   },
@@ -18,5 +18,8 @@
     "@hapi/inert": "^7.0.0",
     "@hapi/vision": "^7.0.0",
     "hbs": "^4.2.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
   }
 }
