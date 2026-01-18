@@ -15,7 +15,7 @@
 
 ## Development Workflow
 - Ask clarifying questions if you are unsure about specifics, give the option to defer decisions
-- Before implementing a new task, and make changes to the local git, create a new git worktree (e.g, `.worktrees/YYYY-MM-DD-task-name`) using the `git worktree` commands (use `git worktree --help` to figure it out)
+- Only when using the Codex CLI: before implementing a new task and making changes to the local git, create a new git worktree (e.g, `.worktrees/YYYY-MM-DD-task-name`) using the `git worktree` commands (use `git worktree --help` to figure it out). Skip this when using the Codex webapp / ChatGPT app.
 - Once done with an implementation, run all relevant build, test, lint, etc. steps.
 - Before commit, check the `Task tracking` and `Documentation` workflows, try to include these into the same commit as the changes.
 - Use Conventional Commits for commit messages (see https://www.conventionalcommits.org/en):
