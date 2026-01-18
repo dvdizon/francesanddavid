@@ -1,7 +1,7 @@
 # Codex Working Agreements
 
 ## Task tracking
-- Track modernization tasks in `docs/tasks/` using numeric prefixes (e.g., `001-modernizing-droplet.md`).
+- Track all tasks in `docs/tasks/` using numeric prefixes (e.g., `001-modernizing-droplet.md`). Before starting work, check whether the task already exists; if it does, update that task, and if it does not, create a new task file.
 - Keep README updates aligned with the tasks so operators can follow a consistent checklist.
 
 ## Preview screenshots (Codex)
