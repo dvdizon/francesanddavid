@@ -1,0 +1,59 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          port: ${{ secrets.DO_PORT || 22 }}
+          script_stop: true
+          script: |
+            set -euo pipefail
+            echo "==> Checking runtime"
+            node -v
+            npm -v
+            if ! command -v pm2 >/dev/null 2>&1; then
+              echo "pm2 is required but was not found in PATH."
+              exit 1
+            fi
+            APP_DIR="/var/www/francesanddavid"
+            echo "==> Deploying to ${APP_DIR}"
+            if [ ! -d "$APP_DIR" ]; then
+              echo "Missing deploy directory: $APP_DIR"
+              exit 1
+            fi
+            cd "$APP_DIR"
+            echo "==> Updating code"
+            git fetch --all
+            git reset --hard origin/main
+            echo "==> Installing dependencies"
+            npm ci --omit=dev
+            echo "==> Restarting PM2 process"
+            pm2 resurrect || true
+            pm2 reload francesanddavid || (
+              echo "pm2 reload failed; starting fresh..."
+              pm2 start index.js --name francesanddavid
+            )
+            pm2 save
+            echo "==> Post-deploy verification"
+            pm2 status francesanddavid
+            if ! curl -fsS http://127.0.0.1:3000/health >/dev/null; then
+              echo "Health check failed; dumping recent logs."
+              pm2 logs francesanddavid --lines 80
+              exit 1
+            fi
+            echo "==> Deploy complete"

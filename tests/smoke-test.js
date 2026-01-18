@@ -23,6 +23,9 @@ const run = async () => {
         const { res, body } = await request(`http://127.0.0.1:${server.info.port}/`);
         assert.strictEqual(res.statusCode, 200, 'Expected / to return 200');
         assert.ok(body.includes('Frances and David'), 'Expected homepage content to render');
+        const health = await request(`http://127.0.0.1:${server.info.port}/health`);
+        assert.strictEqual(health.res.statusCode, 200, 'Expected /health to return 200');
+        assert.strictEqual(health.body, 'ok', 'Expected /health to return ok');
         console.log('Smoke test passed.');
     } finally {
         await server.stop();
@@ -33,3 +36,4 @@ run().catch((error) => {
     console.error(error);
     process.exit(1);
 });
+
