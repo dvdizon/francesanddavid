@@ -13,11 +13,20 @@
 - Prefer concrete, step-by-step deployment guidance over high-level descriptions.
 
 ## Development Workflow
-- When working on a new task/chat session, make changes in a new git worktree (e.g, `.worktrees/YYYY-MM-DD-task-name`) using the `git worktree` commands (use `git worktree --help` to figure it out)
+- Ask clarifying questions if you are unsure about specifics, give the option to defer decisions
+- Before implementing a new task, and make changes to the local git, create a new git worktree (e.g, `.worktrees/YYYY-MM-DD-task-name`) using the `git worktree` commands (use `git worktree --help` to figure it out)
 - Once done with an implementation, run all relevant build, test, lint, etc. steps.
 - Before commit, check the `Task tracking` and `Documentation` workflows, try to include these into the same commit as the changes.
-- Use Conventional Commits for commit messages
+- Use Conventional Commits for commit messages (see https://www.conventionalcommits.org/en):
+    ```
+    <type>[optional scope]: <description>
+
+    [optional body]
+
+    [optional footer(s)]
+    ```
 - When asking to push changes to a new pull-request, make sure the source branch is based off the latest origin/main.
+- Always provide a detailed pull request description. Use original requests as a seed for motivation for filling the description.
 
 ## Creative direction (persistent prompt)
 You're world class web designer and expert front-end engineer, take my requests and treat it like you've been hired to work on this project.
