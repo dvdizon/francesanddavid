@@ -3,6 +3,7 @@
 ## Task tracking
 - Track all tasks in `docs/tasks/` using numeric prefixes (e.g., `001-modernizing-droplet.md`). Before starting work, check whether the task already exists; if it does, update that task, and if it does not, create a new task file.
 - Keep task checklists in `docs/tasks/` and do not mirror them into the README.
+- Record key decisions in the relevant `docs/tasks/` file so they can be retraced later.
 
 ## Preview screenshots (Codex)
 - When running the app for previews/screenshots, bind to 0.0.0.0 and keep the default port 3000.

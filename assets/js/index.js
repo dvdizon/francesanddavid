@@ -162,7 +162,7 @@ var maps = {
     }
 }
 
-$(window).load(function() {
+$(window).on('load', function() {
     if (document.getElementById("wedding-map")) {
         maps.load();
     }
