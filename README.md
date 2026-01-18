@@ -13,6 +13,13 @@ Using:
 - [digital ocean](https://digitalocean.com/) (for hosting)
 - [node/pm2](https://github.com/Unitech/pm2) (for running server in the background)
 
+## Task tracking
+
+Current checklist for this update lives in `docs/tasks/007-college-images-cdn-fix.md`.
+
+- [ ] Verify the college library image renders in the story section.
+- [ ] Confirm PureCSS loads from unpkg without CDN errors.
+
 ## Local development
 
 ```bash
