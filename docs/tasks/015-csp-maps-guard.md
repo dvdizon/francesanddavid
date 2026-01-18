@@ -1,4 +1,4 @@
-# 014 - Guard scroll logic from CSP-blocked Maps
+# 015 - Guard scroll logic from CSP-blocked Maps
 
 ## Goal
 Prevent Google Maps CSP failures from breaking other homepage interactions.
