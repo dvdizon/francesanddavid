@@ -48,8 +48,11 @@ const startServer = async ({ host = defaultHost, port = defaultPort } = {}) => {
                 }
             }
         }
+    });    server.route({
+        path: "/health",
+        method: "GET",
+        handler: () => "ok"
     });
-
     // wedding details route
     server.route({
         path: "/wedding.html",
@@ -92,3 +95,4 @@ if (require.main === module) {
 }
 
 module.exports = { startServer };
+

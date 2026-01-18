@@ -46,6 +46,93 @@ node index.js
 
 ## Deploying to a DigitalOcean Droplet
 
+### GitHub Actions deployment (recommended)
+
+Required GitHub Secrets:
+
+- `DO_HOST` (droplet IP or hostname)
+- `DO_USER` (SSH user, e.g. `deploy`)
+- `DO_SSH_KEY` (private key, PEM format)
+- `DO_PORT` (optional, defaults to `22`)
+
+One-time droplet setup checklist (Ubuntu assumed):
+
+1. **Create a deploy user and grant SSH access.**
+2. **Update the OS:**
+
+   ```bash
+   sudo apt update
+   sudo apt upgrade -y
+   ```
+
+   **Troubleshooting (DigitalOcean droplet agent repo):** If `apt update` fails with a
+   `NO_PUBKEY 35696F43FC7DB4C2` error or a 404 for `droplet-agent`, refresh the repo
+   key or remove the legacy source before retrying:
+
+   ```bash
+   # Option A: refresh the droplet agent repo key
+   curl -fsSL https://repos-droplet.digitalocean.com/gpgkey | \
+     sudo gpg --dearmor -o /usr/share/keyrings/droplet-agent-archive.gpg
+
+   # Option B: remove the droplet agent source if you don't need it
+   sudo rm -f /etc/apt/sources.list.d/droplet-agent.list
+   sudo apt update
+   ```
+
+3. **Install Node.js 20 LTS (or 18 LTS) and npm:**
+
+   ```bash
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   sudo apt install -y nodejs
+   ```
+
+   **Troubleshooting (NodeSource GPG key):** If `apt update` or `apt install` fails with
+   `NO_PUBKEY 2F59B5F99B1BE0B4`, refresh the NodeSource key and repo, then retry:
+
+   ```bash
+   curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | \
+     sudo gpg --dearmor -o /usr/share/keyrings/nodesource.gpg
+   echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | \
+     sudo tee /etc/apt/sources.list.d/nodesource.list
+   sudo apt update
+   sudo apt install -y nodejs
+   ```
+
+4. **Clone the repository into the deploy path and set permissions:**
+
+   ```bash
+   sudo mkdir -p /var/www/francesanddavid
+   sudo chown -R <your-deploy-user>:<your-deploy-user> /var/www/francesanddavid
+   git clone <your-repo-url> /var/www/francesanddavid
+   ```
+
+5. **Install PM2 globally and configure startup:**
+
+   ```bash
+   sudo npm install -g pm2
+   pm2 startup
+   pm2 save
+   ```
+
+6. **Ensure server-side environment variables exist:**
+
+   Populate `/var/www/francesanddavid/.env` as needed. The deploy workflow does not
+   overwrite this file.
+
+7. **Confirm Nginx proxies to the Node upstream:**
+
+   Nginx should proxy `http://127.0.0.1:3000`, and `/health` should return `200`.
+
+Verify a deploy:
+
+```bash
+pm2 status francesanddavid
+curl -fsS http://127.0.0.1:3000/health
+pm2 logs francesanddavid --lines 80
+```
+
+### Manual deployment (fallback)
+
 These steps assume Ubuntu on your Droplet and that you want to keep costs low by continuing to run a single VM.
 
 1. **SSH into the Droplet and update the OS:**
@@ -149,12 +236,12 @@ These steps assume Ubuntu on your Droplet and that you want to keep costs low by
 7. **Verify the deployment:**
 
    ```bash
-   npm test
+   pm2 status francesanddavid
+   curl -fsS http://127.0.0.1:3000/health
    ```
 
    If you see `npm warn Unknown env config "http-proxy"`, unset any `npm_config_http_proxy`
    (or similar) environment variables before running npm again.
-
 ### HTTPS (Certbot + Nginx)
 
 If HTTPS is not working after you set up Nginx, make sure an SSL (port 443) server block exists for your domain. The easiest fix is to let Certbot configure it for you:
@@ -165,3 +252,4 @@ sudo certbot --nginx -d your-domain.com -d www.your-domain.com
 
 
 ```
+
