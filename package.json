@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install:prod": "npm ci --omit=dev",
     "test": "node tests/smoke-test.js && node tests/browser-modal-test.js && node tests/browser-scroll-panel-test.js",
     "start": "node index.js",
     "local": "HOST=0.0.0.0 node index.js"
@@ -11,7 +12,7 @@
   "author": "David Dizon",
   "license": "MIT",
   "engines": {
-    "node": ">=18 <21"
+    "node": ">=18 <25"
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.2",
