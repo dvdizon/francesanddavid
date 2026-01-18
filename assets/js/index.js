@@ -181,6 +181,7 @@ var scrollSections = Array.prototype.slice.call(document.querySelectorAll('[data
 var revealTargets = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
 var scrollTicking = false;
 var heroSection = document.querySelector('.hero-video');
+var heroContent = heroSection ? heroSection.querySelector('.hero-video-content') : null;
 
 var clamp = function(value, min, max) {
     return Math.min(Math.max(value, min), max);
@@ -219,13 +220,15 @@ if (scrollSections.length) {
     requestScrollUpdate();
 }
 
-if (heroSection) {
+if (heroSection && heroContent) {
     var updateHeroVisibility = function() {
         heroSection.classList.toggle('hero-video--clear', window.scrollY > 40);
     };
 
     window.addEventListener('scroll', updateHeroVisibility, { passive: true });
     updateHeroVisibility();
+} else if (heroSection) {
+    heroSection.classList.add('hero-video--clear');
 }
 
 if (revealTargets.length) {

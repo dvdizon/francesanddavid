@@ -25,6 +25,7 @@ Cite this prompt in the task file that you're creating."
 - [ ] Reorder the homepage sections to match the requested timeline flow.
 - [ ] Use existing wedding highlight photos in a full-width layout.
 - [ ] Autoplay the Vimeo wedding film on load (muted).
+- [ ] Present the wedding film as a full-bleed hero without the foreground text panel.
 - [ ] Move the engagement hero image into the timeline with the requested narrative.
 - [ ] Add a story segment for college memories and favorites.
 - [ ] Add subtle wedding details + program links at the bottom.
