@@ -1,20 +1,26 @@
 /* Flickr Photos styles*/
 .photos .flickr-container {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .photos .flickr-container li {
-    display: inline;
+    display: block;
+}
+
+.photos .flickr-container a {
+    display: block;
 }
 
 .photos .flickr-container .item {
     margin-bottom: 5px;
-    width: 220px;
+    width: clamp(140px, 18vw, 220px);
     border-radius: 16px;
     box-shadow: 0 12px 20px rgba(16, 19, 26, 0.12);
     overflow: hidden;
-    width: 100%;
     display: block;
+    height: auto;
 }
 
 /* source from http://osvaldas.info/image-lightbox-responsive-touch-friendly */
