@@ -51,9 +51,18 @@ jobs:
             pm2 save
             echo "==> Post-deploy verification"
             pm2 status francesanddavid
-            if ! curl -fsS http://127.0.0.1:3000/health >/dev/null; then
-              echo "Health check failed; dumping recent logs."
-              pm2 logs francesanddavid --lines 80
-              exit 1
-            fi
+            echo "==> Waiting for health check"
+            for i in {1..15}; do
+              if curl -fsS http://127.0.0.1:3000/health >/dev/null; then
+                echo "Health check OK"
+                break
+              fi
+              if [ "$i" -eq 15 ]; then
+                echo "Health check failed; dumping recent logs."
+                pm2 logs francesanddavid --lines 80
+                exit 1
+              fi
+              sleep 2
+            done
             echo "==> Deploy complete"
+
