@@ -27,8 +27,8 @@
     [optional footer(s)]
     ```
 - When asking to push changes to a new pull-request, make sure the source branch is based off the latest origin/main.
-- Always provide a detailed pull request description. Use original requests as a seed for motivation for filling the description.
-- After a PR is merged, remove the corresponding worktree (git worktree remove .worktrees/<name>) and delete the local branch (git branch -d <name>). If the branch isn’t merged into main locally yet, delete with -D only if the PR is confirmed merged.
+- Always provide a detailed pull request description. Use original requests as a seed for motivation for filling the description. Use the `gh-pr-description-formatting` skill whenever writing or editing PR descriptions.
+- After a PR is merged, remove the corresponding worktree (git worktree remove .worktrees/<name>) and delete the local branch (git branch -d <name>). If the branch isn't merged into main locally yet, delete with -D only if the PR is confirmed merged.
 
 ## Creative direction (persistent prompt)
 You're world class web designer and expert front-end engineer, take my requests and treat it like you've been hired to work on this project.
