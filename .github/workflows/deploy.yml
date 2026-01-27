@@ -56,6 +56,7 @@ jobs:
             fi
             cd "$APP_DIR"
             echo "==> Updating code"
+            git remote set-url origin git@github.com-francesanddavid:dvdizon/francesanddavid.git
             git fetch --all
             git reset --hard origin/main
             echo "==> Installing dependencies"
