@@ -58,7 +58,20 @@ Required GitHub Secrets:
 One-time droplet setup checklist (Ubuntu assumed):
 
 1. **Create a deploy user and grant SSH access.**
-2. **Update the OS:**
+2. **Create a GitHub deploy key + SSH host alias:**
+
+   - Add the deploy key's public key to the GitHub repo as a deploy key.
+   - Configure an SSH host alias on the droplet for the new key:
+
+   ```sshconfig
+   Host github.com-francesanddavid
+     HostName github.com
+     User git
+     IdentityFile ~/.ssh/<deploy-key>
+     IdentitiesOnly yes
+   ```
+
+3. **Update the OS:**
 
    ```bash
    sudo apt update
@@ -79,7 +92,7 @@ One-time droplet setup checklist (Ubuntu assumed):
    sudo apt update
    ```
 
-3. **Install Node.js 20 LTS (or 18 LTS) and npm:**
+4. **Install Node.js 20 LTS (or 18 LTS) and npm:**
 
    ```bash
    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -98,7 +111,7 @@ One-time droplet setup checklist (Ubuntu assumed):
    sudo apt install -y nodejs
    ```
 
-4. **Clone the repository into the deploy path and set permissions:**
+5. **Clone the repository into the deploy path and set permissions:**
 
    ```bash
    sudo mkdir -p /var/www/francesanddavid
@@ -106,7 +119,7 @@ One-time droplet setup checklist (Ubuntu assumed):
    git clone <your-repo-url> /var/www/francesanddavid
    ```
 
-5. **Install PM2 globally and configure startup:**
+6. **Install PM2 globally and configure startup:**
 
    ```bash
    sudo npm install -g pm2
@@ -114,12 +127,12 @@ One-time droplet setup checklist (Ubuntu assumed):
    pm2 save
    ```
 
-6. **Ensure server-side environment variables exist:**
+7. **Ensure server-side environment variables exist:**
 
    Populate `/var/www/francesanddavid/.env` as needed. The deploy workflow does not
    overwrite this file.
 
-7. **Confirm Nginx proxies to the Node upstream:**
+8. **Confirm Nginx proxies to the Node upstream:**
 
    Nginx should proxy `http://127.0.0.1:3000`, and `/health` should return `200`.
 
