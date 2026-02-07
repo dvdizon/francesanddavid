@@ -42,8 +42,8 @@
 - **Gallery source:** Flickr photoset `72157647621851886`
 
 ### Reference Links
-- Wedding details: `/wedding.html`
-- Wedding program: `/program`
+- Wedding details: `wedding.html`
+- Wedding program: `program.html`
 
 ---
 
@@ -139,4 +139,4 @@
 ### Message from the Bride and Groom
 - “We hired an awesome photographer, and we would really like him to capture the moments during our ceremony.”
 - “Please do not take photos during the ceremony. Don't worry, we will share them.”
-- **Image:** `/assets/images/no-camera-allowed.png`
+- **Image:** `assets/images/no-camera-allowed.png`

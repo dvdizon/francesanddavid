@@ -20,7 +20,7 @@ const startServer = async ({ host = defaultHost, port = defaultPort } = {}) => {
             html: hbs
         },
         relativeTo: __dirname,
-        path: 'views'
+        path: '.'
     });
 
     server.route({
@@ -95,4 +95,3 @@ if (require.main === module) {
 }
 
 module.exports = { startServer };
-
