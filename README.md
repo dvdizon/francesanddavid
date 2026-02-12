@@ -79,7 +79,9 @@ These steps assume the site is served from this repo’s default branch and the 
      - `2606:50c0:8001::153`
      - `2606:50c0:8002::153`
      - `2606:50c0:8003::153`
-   - **`www` subdomain:** add a `CNAME` record pointing to `<org-or-user>.github.io`.
+   - **`www` subdomain:** add a `CNAME` record where `www` points to your GitHub Pages host.
+     - Replace `<org-or-user>` with the GitHub account or organization that owns the repo.
+     - Example: if the repo is under `octocat`, point `www` to `octocat.github.io`.
 
 3. **Wait for DNS propagation, then enforce HTTPS.**
    - After the custom domain resolves, return to **Settings → Pages** and enable **Enforce HTTPS**.

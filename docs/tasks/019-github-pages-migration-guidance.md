@@ -12,6 +12,7 @@
 - Navigation and asset paths were updated to be relative (`assets/...`, `program.html`, `wedding.html`) so the site works whether hosted at a repo subpath or a custom domain.
 - Recommended deployment flow: enable Pages from the default branch and `/root`, then verify the published URL loads the homepage and subpages.
 - Custom domains require adding the domain in GitHub Pages settings, adding DNS `A` records for the apex, and a `CNAME` for `www`, then enabling HTTPS once DNS resolves.
+- Clarified README wording that the `www` CNAME target should be `<github-account-or-org>.github.io` (for example, `octocat.github.io`).
 
 ## Decisions
 - Prefer a GitHub Pages "project site" deployment from the default branch, using root-level HTML files and relative paths to avoid custom-domain requirements.
